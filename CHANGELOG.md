@@ -8,7 +8,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - add to pypi
 - adjust license for any additional software (if necessary)
 - add pyup support
-- fix .travis.yml
 
 ## 0.1.0 - 2018-02-22
 ### Added
@@ -25,6 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - updated README.md based off cookiecutter
 - updated .gitignore
+- adjusted .travis.yml (may need more work)
 ## 0.0.1 - 2018-02-21
 ### Added
 - This CHANGELOG.md file to record changes.

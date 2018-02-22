@@ -7,10 +7,10 @@ script: tox
 deploy:
   provider: pypi
   distributions: sdist bdist_wheel
-  user: urdubiometer
+  user: seanpue
   password:
     secure: uq3spgPW+7uPScsO/Hz7OOdus610YiqPma4m/zX2seOsz5dDYRIX4QEw3AYxIN02Kd1d1VO63cQEKOy00YeK8COufeBAiT7CCEoo11d8AKrt+Dzqg2CapahD7AOuvlpmsNlP3tS7C0wg/EnXvUEaLB5YgOngGvUCqcLB7S5G1DeQT67DUU2FCmSwzd38Eu6qekvZaeu2imdBlbvLpfpg4nIYhyeNor9lF7mSdDpyTTXZUgnJ88N9u8GVn6yY83MXKl6DVOffVNdilcldOYgiSqmjVDGiyFiuhtwU8y0MYTPZaJ8fHH+ex1eoJ+RFStJGr3HbAUBIv5o2b1RVrlKC86u4Zavc6Dmo9kPbR8fzIOsRpOV/mxQd5dPedyMS144FfMHolBvZ4NTa/diNle6o3rKWxYNgZUKwTqYU4o107DbMsUtef+U6xm5AHCDWN+940zQoxO07seKnVUDvnTX8qFVXOdYS7WW7gGciTMXxSx0PpvujEbgp/G+Ovio0T2CdQKm6J85d/QoPNrZFL7wOiRkvOzANG0UqnnLhIt0gGqenhhF0KpWKbpFhMnqTW/S/7poXKH7lMY+3xydohsTPp2MbK64KzIsQ8stL8RfCnwr3B2BoNq2E7V5/hrlyE8nUaXFCr1JT12suR/tOIrCSw4BLa62gznSe5RKIuVPOX/8=
   on:
     tags: true
-    repo: urdubiometer/urdubiometer
+    repo: seanpue/urdubiometer
     python: 3.6
