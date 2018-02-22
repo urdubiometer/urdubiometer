@@ -1,13 +1,26 @@
-# urdubiometer
-Urdu BioMeter: An Urdu metrical scanner inspired by bioinformatics
+Urdu BioMeter
+=============
 
-The official central repository for urdubiometer is:
+![image](https://img.shields.io/pypi/v/urdubiometer.svg%0A%20%20%20%20%20:target:%20https://pypi.python.org/pypi/urdubiometer)
 
-   https://github.com/urdubiometer/urdubiometer
+![image](https://img.shields.io/travis/urdubiometer/urdubiometer.svg%0A%20%20%20%20%20:target:%20https://travis-ci.org/urdubiometer/urdubiometer)
 
-See http://readthedocs.org/docs/urdubiometer/en/latest/ for docs.
+![image](https://readthedocs.org/projects/urdubiometer/badge/?version=latest%0A%20%20%20%20%20:target:%20https://urdubiometer.readthedocs.io/en/latest/?badge=latest%0A%20%20%20%20%20:alt:%20Documentation%20Status)
 
-Issues are tracked at https://github.com/urdubiometer/urdubiometer/issues.
+![image](https://pyup.io/repos/github/urdubiometer/urdubiometer/shield.svg%0A%20%20:target:%20https://pyup.io/repos/github/urdubiometer/urdubiometer/%0A%20%20:alt:%20Updates)
 
-[![Build Status](https://travis-ci.org/urdubiometer/urdubiometer.svg?branch=master)](https://travis-ci.org/urdubiometer/urdubiometer)
-~
+An Urdu-Hindi metrical scanner inspired by bioinformatics
+
+-   Free software: BSD license
+-   Documentation: <https://urdubiometer.readthedocs.io>.
+
+Features
+--------
+
+-   TODO
+
+Credits
+-------
+
+This package was created with
+[Cookiecutter](https://github.com/audreyr/cookiecutter).
