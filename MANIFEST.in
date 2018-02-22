@@ -1,0 +1,12 @@
+include AUTHORS.md
+include CONTRIBUTING.md
+include CHANGELOG.md
+include CODE_OF_CONDUCT.md
+include LICENSE
+include README.md
+
+recursive-include tests *
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+
+recursive-include docs *.md *.rst conf.py Makefile make.bat *.jpg *.png *.gif
