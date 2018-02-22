@@ -24,7 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - updated README.md based off cookiecutter
 - updated .gitignore
-- adjusted .travis.yml (may need some work)
+- adjusted .travis.yml (may need some work) 
 ## 0.0.1 - 2018-02-21
 ### Added
 - This CHANGELOG.md file to record changes.
