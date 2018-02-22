@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## 0.1.1 - 2018-02-22
 ### Changed
-- fixed badges in README.md
+- fixed badges in README.md 
 
 ## 0.1.0 - 2018-02-22
 ### Added
