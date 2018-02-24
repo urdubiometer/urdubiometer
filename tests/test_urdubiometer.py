@@ -38,10 +38,19 @@ def test_command_line_interface():
     assert help_result.exit_code == 0
     assert '--help  Show this message and exit.' in help_result.output
 
+def test_graph_parser_parse():
+    """Tests graph-based parser parse function."""
+    assert 'parse' in urdubiometer.GraphParser().__dir__()
+
 def test_graph_parser():
     """Tests graph-based parser."""
-    graphparser = urdubiometer.GraphParser()
+    assert urdubiometer.GraphParser()
+
 
 def test_scanner():
-    """Tests for metrical scanner."""
-    scanner = urdubiometer.Scanner()
+    """Tests metrical scanner."""
+    assert urdubiometer.Scanner()
+
+def test_scanner_scan():
+    """Tests metrical scanner scan function."""
+    assert 'scan' in urdubiometer.Scanner().__dir__()
