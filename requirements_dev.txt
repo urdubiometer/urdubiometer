@@ -12,3 +12,4 @@ pytest-runner==2.11.1
 
 m2r==0.1.13
 sphinx_rtd_theme==0.2.4
+Cerberus==1.1

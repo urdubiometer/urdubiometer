@@ -8,7 +8,7 @@ import pytest
 from click.testing import CliRunner
 
 import urdubiometer
-#from urdubiometer import urdubiometer
+
 from urdubiometer import cli
 
 
@@ -38,19 +38,9 @@ def test_command_line_interface():
     assert help_result.exit_code == 0
     assert '--help  Show this message and exit.' in help_result.output
 
-def test_graph_parser_parse():
-    """Tests graph-based parser parse function."""
-    assert 'parse' in urdubiometer.GraphParser().__dir__()
+    assert 'scan' in help_result.output
 
-def test_graph_parser():
-    """Tests graph-based parser."""
-    assert urdubiometer.GraphParser()
-
-
-def test_scanner():
-    """Tests metrical scanner."""
-    assert urdubiometer.Scanner()
 
 def test_scanner_scan():
-    """Tests metrical scanner scan function."""
+    """Test metrical scanner scan function."""
     assert 'scan' in urdubiometer.Scanner().__dir__()

@@ -4,20 +4,48 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [Unrelease-Maybe]
+- convert tokens to numbers inside ParserRules to improve performance
+- allow toggle of validation to increase load speed
+- add minimum tokens to match to graphparser edge constrains
+
 ## [Unreleased-TODO]
 - add to pypi
-- adjust license for any additional software (if necessary)
+- adjust license to support any additional software (if necessary)
 - add pyup support
+- check that there are no problems with serialization of parser
+- documentation of easy-read format
+- add pydot output to graphparser graph, for demo mode.
+- check/define escape of rules in easy-reading formats
 
-## [Unreleased]
+## 0.1.3 - 2018-03-14
+#### Added
+
+- added graphparser._types.py module with ParserRule, ParserOutput,
+  OnMatchRule, WhiteSpace, and DirectedGraph classes
+- added tests/test_graphparser.py
+- added graphparser init and constructors: from_yaml_file, from_yaml,
+  from_dict. They are cascaded: from_yaml_file calls from_yaml, which calls
+  from_dict. Added a "raw" parameter, to from_dict as to whether or the dict
+  needs to be processed from easy-reading format (default is True)
+- added _unescape_charnames to graphparser module to unescape \\N{CHARNAME}
+  strings (from files, especially)
+- added graphparser/validate.py to handle validation of raw and
+  processed settings, using `Cerberus`
+- created graphparser/initialize.py to convert rules, onmatch rules, and
+  whitespace tointernal types Rules, OnMatchRules, and Whitespace;
+  and, to generate the parser's internal DirectedGraph
+- added GraphParser.parse() method
+
 #### Changed
-- adjusted tests to have failures.
+- modified tests to fail
+- updated contributing.md
 
 ## 0.1.2 - 2018-02-22
 ### Added
 - initialized scanner.py and graphparser submodule
 - added tests to check loading
- 
+
 ## 0.1.1 - 2018-02-22
 ### Changed
 - fixed badges in README.md
@@ -38,6 +66,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - updated README.md based off cookiecutter
 - updated .gitignore
 - adjusted .travis.yml (may need some work)
+
 ## 0.0.1 - 2018-02-21
 ### Added
 - This CHANGELOG.md file to record changes.
