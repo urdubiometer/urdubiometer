@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - add pydot output to graphparser graph, for demo mode.
 - check/define escape of rules in easy-reading formats
 
-## 0.1.3 - 2018-03-14
+## 0.2.0 - 2018-03-14
 #### Added
 
 - added graphparser._types.py module with ParserRule, ParserOutput,
