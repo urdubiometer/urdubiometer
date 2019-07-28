@@ -6,8 +6,6 @@ __author__ = """A. Sean Pue"""
 __email__ = 'a@seanpue.com'
 __version__ = '0.2.0'
 
-__all__ = ['scanner', 'graphparser']
+__all__ = ['scanner']
 
 from urdubiometer.scanner import Scanner # noqa
-
-from urdubiometer.graphparser import GraphParser # noqa

@@ -17,7 +17,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - documentation of easy-read format
 - add pydot output to graphparser graph, for demo mode.
 - check/define escape of rules in easy-reading formats
-- reread GraphParser documentation, and add examples
+
+## 0.2.1 - 2019-07-28
+#### Removed
+- removed tests/test_graphparser.py
+- removed urdubiometer/graphparser to replace with graphtransliterator
+#### Changed
+- init.py removed graphparser
 
 ## 0.2.0 - 2018-03-14
 #### Added
@@ -34,7 +40,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - added graphparser/validate.py to handle validation of raw and
   processed settings, using `Cerberus`
 - created graphparser/initialize.py to convert rules, onmatch rules, and
-  whitespace tointernal types Rules, OnMatchRules, and Whitespace;
+  whitespace to internal types Rules, OnMatchRules, and Whitespace;
   and, to generate the parser's internal DirectedGraph
 - added GraphParser.parse() method
 
