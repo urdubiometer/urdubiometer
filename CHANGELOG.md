@@ -11,17 +11,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - switch type=0 to type='Start' in ndfa graph
 
 ## [Unreleased-TODO]
-- add to pypi
 - adjust license to support any additional software (if necessary)
-- add pyup support
 - confirm settings/transcription.yml is compatible with new UTMO standard
 - decide on parser/transliterator terminology
-- remove visited from _add_subgraph_to_graph because cycle check means its
+- remove visited from _add_subgraph_to_graph if cycle check means it's
   no longer necessary
-- add visualizations and check if _add_subgraph_to_graph is broken
+- add visualizations and check if _add_subgraph_to_graph() is broken
 - add documentation
 - fix contributors
 - add requirements.txt
+- fix project description (MD import) on pypi
+
+## [Unreleased-TODO]
+- added to PyPI
+- added badges to readme.md
+- added pyup
 
 ## 0.2.2 - 2019-07-30
 #### Added
