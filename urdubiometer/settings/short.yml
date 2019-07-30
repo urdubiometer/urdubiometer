@@ -1,0 +1,104 @@
+rules:
+  (b) c s (b al): s_<b>cs(bal)
+#  (<b> c v) c c <b>: s_(<b>cv)cc<b> <- removed 11/23/16 as mimsatch
+  (b) c c (b): s_<b>cc<b>
+  (c) c c (b): s_<c>cc<b>
+  (o) s: s_<o>s #
+  (al) s: s_(al)s
+  (v) c c (b): s_<v>cc<b> # dost, etc. could check onset.
+  b c (b): s_bc<b>
+  b c s: s_bcs
+#  #b nah: s_nah
+  b dul_han: s_bdul_han
+  b c s c<h+wb>: s_bcsc<h+wb>
+  b c s n: s_bcsn
+  c s n: s_csn # is this a problem? Need more constraints?
+#  b c v_duii: s_bcv_duii #
+#  b ko_ii: s_bko_ii
+  b c v_flex: s_bcv_flex
+  b c v (b): s_bcv<b>
+  b c v (o): s_bcv<o>
+  b c v (z): s_bcv<z>
+  b nah: s_bnah # nah, kih type words
+  nah: s_nah # o, nah <-- add b instead?
+  b c v n (b): s_bcvn<b> # <--
+#  b c<;xv> s: s_bc<;xv>s
+  b o: s_bo
+  b s: s_bs
+  b s n: s_bsn
+  b tum: s_btum
+  b v<aur> (c b s c): s_bv<aur_cbsc>
+  b v<aur> (c b s n c): s_bv<aur_cbsc>
+  b v<aur> (c b v): s_bv<aur_cbv>
+# b v <b>: s_bv<b> # added for rashed; not necessary in Ghalib. removed 11/23/16
+  c: s_c
+  c o: s_co
+  c b o: s_cbo
+  c b s: s_cbs
+  (c) c b s n (c v): s_cbcn  # added for garm a;ndheraa
+  c o: s_co
+  c s: s_cs
+  c s c<h+wb>: s_csc<h+wb>
+  c v (b): s_cv<b>
+  c v (z): s_cv<z>
+  c v n (b): s_cvn<b>
+  c v<ii+o>: s_cv<ii+o>i
+  c v<ii+z>: s_cv<ii+z>
+  #(v<ii+z>) z: s_(v<ii+z>)z # not necessary?
+  v<ii+z> z: s_v<ii+z>z # sa((ii-e again (as y)
+#  c v<aa+z>: s_cv<aa+z> This should not be short
+  b c v<ii+o>: s_bcv<ii+o>
+  b c v<ii+z>: s_bcv<ii+z>
+  b c v<aa+z>: s_bcv<aa+z>
+  c v<aa+z>: s_bcv<aa+z> # are these really necessary?
+  c v_fut: s_cv_fut
+  c v_fut n: s_cv_futn
+  b c v_fut n: bs_cv_futn
+  b c v_fut: bs_cv_fut
+#  c v_uu<))o;n+wb>: s_c_v_uu<))o;n+wb>
+  c z: s_cz
+#  c<;xv> s: s_c<;xv>s
+  c<h+wb>: s_c<h+wb>
+  c<h+wb> o: s_c<h+wb>o
+  c<h+wb> b o: s_c<h+wb>o
+  o: s_o
+  v (b): s_v<b>
+#  (v<ii+z>) z: s_v<ii+z>z
+  z: s_z
+tokens:
+  n<(aa)wb>: [unused_here]
+  b: [wb]  # <- whitespace_class
+  c: [tkn] #, c]
+  c<h+wb>: [tkn]
+  v_flex: [tkn] # used with ko))ii, du))ii, etc.
+#  ko_ii:#
+#  - tkn
+#  v_duii:
+#  - tkn
+  n: [tkn]
+  nah: [tkn]
+  o: [tkn] #, o]
+  s: [tkn]
+  tum: [tkn]
+  v: [tkn]
+  v<aur>: [tkn]
+  v<ii+o>: [tkn]
+  v<ii+z>: [tkn]
+  v<aa+z>: [tkn]
+  v_fut: [tkn] #could rephrase as morpheme boundary
+#  v_uu<))o;n+wb>:
+#  - tkn
+#  nah:
+#  - tkn
+  z: [tkn] #, z]
+  al: [tkn]
+  pahun: [tkn]
+  dul_han: [tkn]
+  al: [tkn]
+  duul_haa: [tkn]
+#  c_ky:
+#  - tkn # not used by short
+whitespace:
+  default: b
+  token_class: wb # for wordbreak
+  consolidate: True

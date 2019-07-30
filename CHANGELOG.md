@@ -7,23 +7,45 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unrelease-Maybe]
 - convert tokens to numbers inside ParserRules to improve performance
 - allow toggle of validation to increase load speed
-- add minimum tokens to match to graphparser edge constrains
+- add minimum tokens to match to graphparser edge constraints
+- switch type=0 to type='Start' in ndfa graph
 
 ## [Unreleased-TODO]
 - add to pypi
 - adjust license to support any additional software (if necessary)
 - add pyup support
-- check that there are no problems with serialization of parser
-- documentation of easy-read format
-- add pydot output to graphparser graph, for demo mode.
-- check/define escape of rules in easy-reading formats
+- confirm settings/transcription.yml is compatible with new UTMO standard
+- decide on parser/transliterator terminology
+- remove visited from _add_subgraph_to_graph because cycle check means its
+  no longer necessary
+- add visualizations and check if _add_subgraph_to_graph is broken
+- add documentation
+- fix contributors
+- add requirements.txt
+
+## 0.2.2 - XXXX-XX-XX
+#### Added
+- added settings/*
+- added urdubiometer/cli.py,
+- added tests/test_scanner.py
+- added scanner/*
+- use  of graphtransliterator using nodes as list rather than dict
+  required rewrite of _minimize_ndfa()
+#### Changed
+- modified urdubiometer.py (minor)
+#### Removed
+- removed scanner.py
 
 ## 0.2.1 - 2019-07-28
 #### Removed
+
 - removed tests/test_graphparser.py
-- removed urdubiometer/graphparser to replace with graphtransliterator
+- removed urdubiometer/graphparser/* to replace with graphtransliterator
+
 #### Changed
+
 - init.py removed graphparser
+- .travis.yml adjusted tags
 
 ## 0.2.0 - 2018-03-14
 #### Added

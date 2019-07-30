@@ -20,7 +20,7 @@ if not os.path.isfile(history_filename):
 with open(history_filename) as history_file:
     history = history_file.read()
 
-requirements = ['Click>=6.0', ]
+requirements = ['Click>=6.0', 'graphtransliterator']
 
 setup_requirements = ['pytest-runner', ]
 

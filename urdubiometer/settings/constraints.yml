@@ -1,0 +1,41 @@
+# Disallowed combinations.
+#
+# previously matched unit (- or =):
+#   currently matched unit (- or =):
+#     previous match type (str):
+#       disallowed match types (list)
+#
+'-':
+  '-':
+    s_bs: [s_c]
+    s_bcs: [s_c, s_c<h+wb>]
+    s_bcsc<h+wb>: [s_bcv<z>, s_o]
+    s_bcsn: [s_c<h+wb>]
+    s_c: [s_v<ii+z>z, s_v<b>, s_z, s_o, s_c, s_c<h+wb>]
+    s_cbs: [s_c]
+    s_cs: [s_cvn<b>, s_c<h+wb>, s_c<h+wb>o, s_c]
+    s_csc<h+wb>: [s_bcv<aa+z>]
+  '=':
+    s_<v>cc<b>: [l_bsc]
+    s_c: [l_o, l_z, l_v, l_v<ii+z>z]
+    s_c<h+wb>: [l_o]
+    s_cs: [l_c<h+wb>o]
+'_':
+  '=':
+    '*': [l_cvbal, l_(bal)cvc<h+wb>, l_cbal, l_cvn<(aa)wb>]
+'=':
+  '_':
+    l_bcsc: [s_v<b>]
+    l_bsc: [s_v<b>]
+    l_csc: [s_o, s_v<b>, s_z]
+  '-':
+    l_bcsc: [s_v<b>]
+    l_bsc: [s_v<b>]
+    l_csc: [s_o, s_v<b>, s_z]
+  '=':
+    l_bcsc: [l_v, l_z]
+    l_bsc: [l_v]
+    l_bv<aur>c: [l_bv, l_bsc]
+    l_cbsc: [l_v]
+    l_cbv<aur>c: [l_bv]
+    l_csc: [l_z, l_v, l_o]
