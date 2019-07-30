@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - fix contributors
 - add requirements.txt
 
-## 0.2.2 - XXXX-XX-XX
+## 0.2.2 - 2019-07-30
 #### Added
 - added settings/*
 - added urdubiometer/cli.py,
@@ -31,8 +31,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - added scanner/*
 - use  of graphtransliterator using nodes as list rather than dict
   required rewrite of _minimize_ndfa()
+- adjusted setup.py for markdown
+
 #### Changed
 - modified urdubiometer.py (minor)
+
 #### Removed
 - removed scanner.py
 
