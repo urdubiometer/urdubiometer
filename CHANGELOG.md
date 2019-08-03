@@ -27,6 +27,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - fix code documentation and proofread
 - add black to contributing
 
+## 0.2.7 - 2019-08-03
+- fixed setup.cfg, setup.py, to correct bumpversion problem with single quotes
+
 ## 0.2.6 - 2019-08-03
 - added black code formatting
 

@@ -4,7 +4,7 @@
 
 __author__ = """A. Sean Pue"""
 __email__ = "a@seanpue.com"
-__version__ = "__version__ = '0.2.6'"
+__version__ = "0.2.6"
 
 __all__ = ["scanner"]
 
