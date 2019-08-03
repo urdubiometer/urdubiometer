@@ -56,6 +56,6 @@ setup(
     test_suite="tests",
     tests_require=test_requirements,
     url="https://github.com/urdubiometer/urdubiometer",
-    version="0.2.4",
+    version="version='0.2.5'",
     zip_safe=False,
 )
