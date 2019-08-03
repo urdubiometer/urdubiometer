@@ -26,6 +26,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - fix project description (markdown import) on pypi
 - fix code documentation and proofread
 
+## 0.2.5 - 2019-08-02
+- change to .travis.yml repo name
+- added 3.7 to setup.py
+
 ## 0.2.4 - 2019-08-02
 #### Changed
 - adjusted urdubiometer/__init__.py to fix __all__ and import
