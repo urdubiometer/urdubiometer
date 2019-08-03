@@ -141,15 +141,15 @@ def test_validator():
 
     meters_list = yaml.safe_load("""
     -
-      id : 1
+      id : "1"
       regex_pattern : ===(-)
       name : three longs and maybe a short
     -
-      id : 2
+      id : "2"
       regex_pattern : (-|=)==(=|-)
       name : a long or short, two longs, and a long or short
     -
-      id : 2
+      id : "2"
       regex_pattern : (=-=|===)+==(=|-)
       name : meter with cycles
     """)
@@ -315,11 +315,11 @@ def test_constraints():
     meters_list = yaml.safe_load(
         """
         -
-          id: 1
+          id: "1"
           name: long long
           regex_pattern: "=="
         -
-          id: 2
+          id: "2"
           name: short short long
           notes: should not be possible due to constraints
           regex_pattern: "--="

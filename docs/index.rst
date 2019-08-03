@@ -5,10 +5,11 @@ Welcome to Urdu BioMeter's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   readme
+
    installation
-   usage
-   source/modules
+   readme
+   tutorial
+   api
    code_of_conduct
    contributing
    authors

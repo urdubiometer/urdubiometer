@@ -5,6 +5,7 @@
 #     previous match type (str):
 #       disallowed match types (list)
 #
+
 '-':
   '-':
     s_bs: [s_c]

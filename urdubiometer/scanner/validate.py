@@ -125,7 +125,7 @@ def validate_meters_list(meters_list):
                 type: dict
                 schema:
                     id:
-                        type: number
+                        type: string
                     name:
                         type: string
                     notes:

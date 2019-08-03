@@ -26,7 +26,7 @@ import pickle
 def test_default_scanner():
 
     z = urdubiometer.DefaultScanner(
-        meters_filter=lambda x: [_ for _ in x if _['id'] == 1]
+        meters_filter=lambda x: [_ for _ in x if _['id'] == "1"]
     )
     assert len(z.meters_list) == 1
 

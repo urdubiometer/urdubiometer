@@ -6,26 +6,41 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unrelease-Maybe]
 - convert tokens to numbers inside ParserRules to improve performance
-- allow toggle of validation to increase load speed
+- allow toggle of validation to decrease load speed
 - add minimum tokens to match to graphparser edge constraints
-- switch type=0 to type='Start' in ndfa graph
+- switch type=0 to type='Start' in ndfa graph (not possible?)
+- add coverage badge
+- rename DefaultScanner to GhazalScanner
+- variable rules for modern vs. classical language
 
 ## [Unreleased-TODO]
 - adjust license to support any additional software (if necessary)
 - confirm settings/transcription.yml is compatible with new UTMO standard
 - decide on parser/transliterator terminology
 - remove visited from _add_subgraph_to_graph if cycle check means it's
-  no longer necessary
+  no longer necessary (?)
 - add visualizations and check if _add_subgraph_to_graph() is broken
 - add documentation
 - fix contributors
 - add requirements.txt
-- fix project description (MD import) on pypi
+- fix project description (markdown import) on pypi
+- fix code documentation and proofread
 
-## [Unreleased-TODO]
+## 0.2.4 - 2019-08-02
+#### Changed
+- adjusted urdubiometer/__init__.py to fix __all__ and import
+- changed "id" in meters_list to string and fixed tests in scanner/validate.py,
+  settings/ghazal_meters.yml, test_scanner.py, test_urdubiometer.py
+- modification to doc structure (following earlier docs, needs adjustment)
+#### Added
+- added api.rst to docs (in progress)
+
+## 0.2.3 - 2019-07-30
 - added to PyPI
-- added badges to readme.md
 - added pyup
+- added pypi, pyup badges to readme.md
+- added notebooks/
+- adjust docs/index and added docs/api.rst
 
 ## 0.2.2 - 2019-07-30
 #### Added
