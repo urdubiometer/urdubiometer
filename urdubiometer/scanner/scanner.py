@@ -20,20 +20,17 @@ Base class for metrical scanner.
 # add specific examples
 import itertools
 from collections import deque
+
 # import logging
 # logging.basicConfig(level=logging.CRITICAL)
 # logger = logging.getLogger(__name__)
 
 from .types import NodeMatch, ScanIteration, ScanResult, UnitMatch
-from .validate import (
-    validate_parsers, validate_meters_list, validate_constraints
-)
-from .initialize import (
-    _meters_graph_of, _constrained_parsers_of,
-)
+from .validate import validate_parsers, validate_meters_list, validate_constraints
+from .initialize import _meters_graph_of, _constrained_parsers_of
 
 
-class Scanner():
+class Scanner:
     """
     Scanner class.
 
@@ -61,22 +58,22 @@ class Scanner():
 
     """
 
-    def __init__(self,
-                 transcription_parser,
-                 long_parser,
-                 short_parser,
-                 constraints,
-                 meters_list,
-                 find_feet=None,
-                 post_scan_filter=None):
+    def __init__(
+        self,
+        transcription_parser,
+        long_parser,
+        short_parser,
+        constraints,
+        meters_list,
+        find_feet=None,
+        post_scan_filter=None,
+    ):
 
-        validate_parsers(transcription_parser,
-                         long_parser,
-                         short_parser)
+        validate_parsers(transcription_parser, long_parser, short_parser)
 
-        validate_constraints(constraints,
-                             long_parser.productions,
-                             short_parser.productions)
+        validate_constraints(
+            constraints, long_parser.productions, short_parser.productions
+        )
 
         validate_meters_list(meters_list)
 
@@ -87,9 +84,8 @@ class Scanner():
         self._post_scan_filter = post_scan_filter
         self._constraints = constraints
         self._constrained_parsers = _constrained_parsers_of(
-            constraints,
-            long_parser,
-            short_parser)
+            constraints, long_parser, short_parser
+        )
 
         self._translation_graph = _meters_graph_of(meters_list)
         self._meters_list = meters_list
@@ -109,8 +105,7 @@ class Scanner():
 
         return self._transcription_parser.transliterate(input)
 
-    def scan(self, input, first_only=False, graph_details=False,
-             show_feet=False):
+    def scan(self, input, first_only=False, graph_details=False, show_feet=False):
         """
         Scan input.
 
@@ -131,19 +126,20 @@ class Scanner():
             if graph_details is True, a list of NodeMatch.
             None if no complete scans are found.
         """
+
         def special_parser():
             """Determine if there is a constrained parser to be used."""
 
             if not self._constrained_parsers or len(matches) == 0:
                 return None
-            parent_type = graph.node[parent_key]['type']
+            parent_type = graph.node[parent_key]["type"]
             try:
-                if parent_type == '_' and node_type == '=':
-                    parser = self._constrained_parsers[
-                        parent_type][node_type]['*']
+                if parent_type == "_" and node_type == "=":
+                    parser = self._constrained_parsers[parent_type][node_type]["*"]
                 else:
-                    parser = self._constrained_parsers[
-                        parent_type][node_type][matches[-1].rule_found]
+                    parser = self._constrained_parsers[parent_type][node_type][
+                        matches[-1].rule_found
+                    ]
                 return parser
             except KeyError:
                 return None
@@ -152,10 +148,11 @@ class Scanner():
         assert graph is not None
         parse = self._transcription_parser.transliterate(input)
         # find original tokens, and add whitespace.
-        transcription_tokens = \
-            [[self._transcription_parser._whitespace.default]] + \
-            self._transcription_parser.last_matched_rule_tokens + \
+        transcription_tokens = (
             [[self._transcription_parser._whitespace.default]]
+            + self._transcription_parser.last_matched_rule_tokens
+            + [[self._transcription_parser._whitespace.default]]
+        )
 
         # logger.debug("Parse for input %s is: %s" % (input, parse))
         tokens = self._long_parser.tokenize(parse)
@@ -166,23 +163,15 @@ class Scanner():
         for _ in graph.edge[0]:  # <--- could add weights here
             stack.appendleft(
                 ScanIteration(
-                    node_key=_,
-                    parent_key=0,
-                    token_i=0,
-                    matches=[],
-                    matched_so_far=''
+                    node_key=_, parent_key=0, token_i=0, matches=[], matched_so_far=""
                 )
             )
         continue_processing = True
         while continue_processing and len(stack) > 0:
             iteration = stack.popleft()
-            (node_key,
-             parent_key,
-             token_i,
-             matches,
-             matched_so_far) = iteration
+            (node_key, parent_key, token_i, matches, matched_so_far) = iteration
             node = graph.node[node_key]
-            node_type = node['type']
+            node_type = node["type"]
             # logger.debug(iteration)
             # ---- check if accepting ----
             if _is_accepting(node):
@@ -197,7 +186,7 @@ class Scanner():
                     scan_result = ScanResult(
                         scan=matched_so_far,
                         matches=matches,
-                        meter_key=node.get('meter_key')
+                        meter_key=node.get("meter_key"),
                     )
                     completed_scans.append(scan_result)
                     # logger.debug('completed scan: %s' % str(scan_result))
@@ -205,16 +194,14 @@ class Scanner():
                         continue_processing = False
                 continue
             # ---- otherwise, check that node matches here ----
-            if node_type == '=':
+            if node_type == "=":
                 parser = special_parser() or self._long_parser
-            elif node_type == '-' or node_type == '_':
+            elif node_type == "-" or node_type == "_":
                 parser = special_parser() or self._short_parser
 
             assert parser
 
-            rules_matched = parser.match_at(
-                token_i, tokens, match_all=True
-            )
+            rules_matched = parser.match_at(token_i, tokens, match_all=True)
             if not rules_matched:
                 continue
             # tokens have been matched for this node, so process its
@@ -234,27 +221,30 @@ class Scanner():
                     # Retrieve and flatten original tokens.
                     orig_tokens = list(
                         itertools.chain.from_iterable(
-                            [transcription_tokens[i] for i in range(
-                                token_i, token_i+len(rule.tokens)
-                             )]))
+                            [
+                                transcription_tokens[i]
+                                for i in range(token_i, token_i + len(rule.tokens))
+                            ]
+                        )
+                    )
 
                     if graph_details:
                         match_data = NodeMatch(
-                                        type=node_type,
-                                        matched_tokens=rule.tokens,
-                                        parent_key=parent_key,
-                                        node_key=node_key,
-                                        orig_tokens=orig_tokens,
-                                        rule_found=rule.production,
-                                        # rule_key=rule_key,
-                                        token_i=token_i
-                                     )
+                            type=node_type,
+                            matched_tokens=rule.tokens,
+                            parent_key=parent_key,
+                            node_key=node_key,
+                            orig_tokens=orig_tokens,
+                            rule_found=rule.production,
+                            # rule_key=rule_key,
+                            token_i=token_i,
+                        )
                     else:
 
                         match_data = UnitMatch(
-                                         type=node_type,
-                                         rule_found=rule.production,
-                                         orig_tokens=orig_tokens
+                            type=node_type,
+                            rule_found=rule.production,
+                            orig_tokens=orig_tokens,
                         )
 
                     # add new scan iterations
@@ -263,9 +253,9 @@ class Scanner():
                         ScanIteration(
                             node_key=child_key,
                             parent_key=node_key,
-                            token_i=token_i+len(rule.tokens),
-                            matches=matches+[match_data],
-                            matched_so_far=matched_so_far+node_type
+                            token_i=token_i + len(rule.tokens),
+                            matches=matches + [match_data],
+                            matched_so_far=matched_so_far + node_type,
                         )
                     )
         if len(completed_scans) > 0 and self._post_scan_filter:
@@ -289,4 +279,4 @@ class Scanner():
 
 def _is_accepting(node):
     """Check if node is accepting."""
-    return node.get('type') == 'Accepting'
+    return node.get("type") == "Accepting"

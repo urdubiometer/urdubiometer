@@ -3,8 +3,8 @@
 """Sub-level package for Scanner, a metrical scanner in Urdu BioMeter."""
 
 __author__ = """A. Sean Pue"""
-__email__ = 'a@seanpue.com'
+__email__ = "a@seanpue.com"
 
-from .scanner import * # noqa
-from .default import * # noqa
-from .types import * # noqa
+from .scanner import *  # noqa
+from .default import *  # noqa
+from .types import *  # noqa

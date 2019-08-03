@@ -102,12 +102,11 @@ def validate_constraints(constraints, long_productions, short_productions):
     if not constraints:
         return
     schema_str = CONSTRAINTS_SCHEMA_STR.format(
-        short_productions=short_productions,
-        long_productions=long_productions
+        short_productions=short_productions, long_productions=long_productions
     )
     schema = yaml.safe_load(schema_str)
     validator = Validator()
-    if not validator.validate({'constraints': constraints}, schema):
+    if not validator.validate({"constraints": constraints}, schema):
         raise ValueError("Errors in constraints:\n%s" % validator.errors)
 
 
@@ -146,11 +145,9 @@ def validate_meters_list(meters_list):
         """
     )
     validator = Validator()
-    validator.validate({'meters_list': meters_list},
-                       METERS_LIST_SCHEMA)
+    validator.validate({"meters_list": meters_list}, METERS_LIST_SCHEMA)
     if validator.errors:
-        raise ValueError("Errors in meters list input: \n %s" %
-                         validator.errors)
+        raise ValueError("Errors in meters list input: \n %s" % validator.errors)
 
 
 # ---------- validate parsers -----------
@@ -171,27 +168,24 @@ def validate_parsers(transcription_parser, long_parser, short_parser):
 
     """
     if set(long_parser.tokens.keys()) != set(short_parser.tokens.keys()):
-        not_in_short = \
-            set(long_parser.tokens.keys()) - set(short_parser.tokens.keys())
-        not_in_long = \
-            set(short_parser.tokens.keys()) - set(long_parser.tokens.keys())
+        not_in_short = set(long_parser.tokens.keys()) - set(short_parser.tokens.keys())
+        not_in_long = set(short_parser.tokens.keys()) - set(long_parser.tokens.keys())
 
         raise ValueError(
-            "Long and short parser tokens do not match: \n" +
-            "  Missing from long: %s\n" % not_in_long +
-            "  Missing from short: %s\n" % not_in_short
+            "Long and short parser tokens do not match: \n"
+            + "  Missing from long: %s\n" % not_in_long
+            + "  Missing from short: %s\n" % not_in_short
         )
 
-    production_tokens = [_.production for _ in transcription_parser.rules
-                         if _.production != '']
+    production_tokens = [
+        _.production for _ in transcription_parser.rules if _.production != ""
+    ]
 
     if set(production_tokens) != set(long_parser.tokens):
-        not_in_transcription = \
-            set(long_parser.tokens) - set(production_tokens)
-        not_in_longshort = \
-            set(production_tokens) - set(long_parser.tokens)
+        not_in_transcription = set(long_parser.tokens) - set(production_tokens)
+        not_in_longshort = set(production_tokens) - set(long_parser.tokens)
         raise ValueError(
-            "Transcription and long/short tokens do not match: \n" +
-            "  Missing from transcription: %s\n" % not_in_transcription +
-            "  Missing from long/short: %s\n" % not_in_longshort
+            "Transcription and long/short tokens do not match: \n"
+            + "  Missing from transcription: %s\n" % not_in_transcription
+            + "  Missing from long/short: %s\n" % not_in_longshort
         )

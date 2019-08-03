@@ -25,6 +25,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - add requirements.txt
 - fix project description (markdown import) on pypi
 - fix code documentation and proofread
+- add black to contributing
+
+## 0.2.6 - 2019-08-03
+- added black code formatting
 
 ## 0.2.5 - 2019-08-02
 - change to .travis.yml repo name

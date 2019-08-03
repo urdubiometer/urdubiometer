@@ -15,38 +15,34 @@ from graphtransliterator import GraphTransliterator
 
 
 transcription_filename = pkg_resources.resource_filename(
-    'urdubiometer',
-    "settings/transcription.yml"
+    "urdubiometer", "settings/transcription.yml"
 )
 long_parser_filename = pkg_resources.resource_filename(
-    'urdubiometer',
-    "settings/long.yml"
+    "urdubiometer", "settings/long.yml"
 )
 short_parser_filename = pkg_resources.resource_filename(
-    'urdubiometer',
-    "settings/short.yml"
+    "urdubiometer", "settings/short.yml"
 )
 
 constraints_filename = pkg_resources.resource_filename(
-    'urdubiometer',
-    "settings/constraints.yml"
+    "urdubiometer", "settings/constraints.yml"
 )
 meters_filename = pkg_resources.resource_filename(
-    'urdubiometer',
-    "settings/ghazal_meters.yml"
+    "urdubiometer", "settings/ghazal_meters.yml"
 )
 
 
 def _load_yaml(yaml_filename):
-    with open(yaml_filename, 'r') as f:
+    with open(yaml_filename, "r") as f:
         return yaml.safe_load(f.read())
 
 
-_COST_OF = {'-': 20, '=': 10, '_': 20}
+_COST_OF = {"-": 20, "=": 10, "_": 20}
 
 
 def filter_scans(scans):
     """Remove worst of scans mapping to same meter."""
+
     def cost_of(x):
         cost = 0
         for _ in scans[x].scan:
@@ -66,8 +62,7 @@ def filter_scans(scans):
         if len(scan_keys) < 2:
             continue
         else:
-            _, min_idx = min((cost_of(val), idx)
-                             for (idx, val) in enumerate(scan_keys))
+            _, min_idx = min((cost_of(val), idx) for (idx, val) in enumerate(scan_keys))
         for _ in scan_keys:
             if _ != min_idx:
                 scans[_] = None
@@ -79,19 +74,19 @@ def filter_scans(scans):
 def _gen_possible_feet(meters_list):
     """Generate possible feet from a meters list."""
 
-    withfeet = [_['fp7pattern'].replace(' ', '') for _ in meters_list]
+    withfeet = [_["fp7pattern"].replace(" ", "") for _ in meters_list]
     poss_feet = []
     for _ in withfeet:
-        if '*' in _:
-            poss_feet.append('=' + _[2:])
-            poss_feet.append('=' + _[2:] + "_")
-            poss_feet.append('-' + _[2:] + "_")
-            assert '//' not in _
-        elif '//' in _:
-            loc = _.index('//')
+        if "*" in _:
+            poss_feet.append("=" + _[2:])
+            poss_feet.append("=" + _[2:] + "_")
+            poss_feet.append("-" + _[2:] + "_")
+            assert "//" not in _
+        elif "//" in _:
+            loc = _.index("//")
             poss_feet.append(_)
-            poss_feet.append(_ + '_')
-            poss_feet.append(_[0:loc] + '_' + _[loc:])
+            poss_feet.append(_ + "_")
+            poss_feet.append(_[0:loc] + "_" + _[loc:])
         else:
             poss_feet.append(_)
             poss_feet.append(_ + "_")
@@ -130,5 +125,5 @@ class DefaultScanner(Scanner):
             _load_yaml(constraints_filename),
             meters_list,
             find_feet=find_feet,  # self.find_feet,
-            post_scan_filter=filter_scans
+            post_scan_filter=filter_scans,
         )

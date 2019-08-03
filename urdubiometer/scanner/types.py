@@ -6,30 +6,25 @@ from collections import namedtuple
 
 
 ScanIteration = namedtuple(
-    'ScanIteration',
-    ["node_key",
-     "parent_key",
-     "token_i",
-     "matches",
-     "matched_so_far"])
-
-
-NodeMatch = namedtuple(
-    'NodeMatch',
-    ["type",       # =, -, or _
-     "matched_tokens",  # tokens matched
-     "node_key",        # id of node in graph
-     "orig_tokens",     # original tokens that were matched
-     "rule_found",      # name of rule found (production of parser)
-     "token_i",         # used for matches at nodes in graph
-     "parent_key"]     # key of parent node in graph
+    "ScanIteration", ["node_key", "parent_key", "token_i", "matches", "matched_so_far"]
 )
 
 
-class UnitMatch(namedtuple('UnitMatch',
-                           ["type",
-                            "rule_found",
-                            "orig_tokens"])):
+NodeMatch = namedtuple(
+    "NodeMatch",
+    [
+        "type",  # =, -, or _
+        "matched_tokens",  # tokens matched
+        "node_key",  # id of node in graph
+        "orig_tokens",  # original tokens that were matched
+        "rule_found",  # name of rule found (production of parser)
+        "token_i",  # used for matches at nodes in graph
+        "parent_key",
+    ],  # key of parent node in graph
+)
+
+
+class UnitMatch(namedtuple("UnitMatch", ["type", "rule_found", "orig_tokens"])):
     """
     Class for metrical unit match of Scanner.
 
@@ -46,13 +41,11 @@ class UnitMatch(namedtuple('UnitMatch',
     orig_tokens: list of str
         Original tokens matching this metrical unit
     """
+
     __slots__ = ()
 
 
-class ScanResult(namedtuple('ScanResult',
-                            ["scan",
-                             "matches",
-                             "meter_key"])):
+class ScanResult(namedtuple("ScanResult", ["scan", "matches", "meter_key"])):
     """
     Class for scan results of Scanner
 
@@ -71,13 +64,10 @@ class ScanResult(namedtuple('ScanResult',
 
     # TODO: Check if meter_key is in fact an int
     """
+
     __slots__ = ()
 
 
 Constraint = namedtuple(
-    'Constraint',
-    ["prev_node",
-     "next_node",
-     "prev_token",
-     "next_token"]
+    "Constraint", ["prev_node", "next_node", "prev_token", "next_token"]
 )

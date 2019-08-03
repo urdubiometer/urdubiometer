@@ -25,11 +25,11 @@ def _constrained_parsers_of(constraints, long_parser, short_parser):
     for prev_node_key, next_node in constrained_parsers.items():
         for next_node_key, prev_token in next_node.items():
             for prev_token_key, productions in prev_token.items():
-                if next_node_key == '=':
+                if next_node_key == "=":
                     parser = long_parser
-                elif next_node_key == '_':
+                elif next_node_key == "_":
                     parser = short_parser
-                elif next_node_key == '-':
+                elif next_node_key == "-":
                     parser = short_parser
                 prev_token[prev_token_key] = parser.pruned_of(productions)
     return constrained_parsers
@@ -57,13 +57,10 @@ def _meters_graph_of(meters_list):
 
     # validate_meters_list(meters_list) already called in init so cut
     for i, meter in enumerate(meters_list):
-        regex = meter['regex_pattern']
+        regex = meter["regex_pattern"]
         subgraph = _minimized_graph_of_meter(regex)
-        meter.update({'meter_key': i})
-        meters_graph = _add_subgraph_to_graph(
-            subgraph,
-            meters_graph,
-            meter)
+        meter.update({"meter_key": i})
+        meters_graph = _add_subgraph_to_graph(subgraph, meters_graph, meter)
     return meters_graph
 
 
@@ -101,61 +98,53 @@ def _regex_to_postfix(regex):
 
     for _ in regex:
 
-        if _ == '(':
+        if _ == "(":
             if natom > 1:
                 natom = natom - 1
-                dst.append('.')
+                dst.append(".")
             paren.append((nalt, natom))
             nalt = 0
             natom = 0
-        elif _ == '|':
+        elif _ == "|":
             if natom == 0:  # pragma: no cover
-                raise ValueError(
-                    "Regex is missing an expression before |."
-                )
+                raise ValueError("Regex is missing an expression before |.")
             natom -= 1
             while natom > 0:
-                dst.append('.')
+                dst.append(".")
                 natom -= 1
             nalt += 1
-        elif _ == ')':
+        elif _ == ")":
             if not paren:
-                raise ValueError(
-                    "Regex parentheses do not match."
-                )
+                raise ValueError("Regex parentheses do not match.")
             if natom == 0:  # pragma: no cover
-                raise ValueError(
-                    "Regex parentheses are missing an expression."
-                )
+                raise ValueError("Regex parentheses are missing an expression.")
             natom -= 1
             while natom > 0:
-                dst.append('.')
+                dst.append(".")
                 natom -= 1
             while nalt > 0:
-                dst.append('|')
+                dst.append("|")
                 nalt -= 1
             (nalt, natom) = paren.pop()
             natom += 1
-        elif _ in ('*', '+', '?'):
+        elif _ in ("*", "+", "?"):
             if natom == 0:  # pragma: no cover
-                raise ValueError(
-                    "Regex operator %s requires an expression." % _
-                )
+                raise ValueError("Regex operator %s requires an expression." % _)
             dst.append(_)
         else:
             if natom > 1:
                 natom -= 1
-                dst.append('.')
+                dst.append(".")
             dst.append(_)
             natom += 1
     natom -= 1
     while natom > 0:
-        dst.append('.')
+        dst.append(".")
         natom -= 1
     while nalt > 0:
-        dst.append('|'*nalt)
+        dst.append("|" * nalt)
         nalt -= 1
-    return ''.join(dst)
+    return "".join(dst)
 
 
 def _postfix_to_ndfa(postfix):
@@ -213,9 +202,7 @@ def _postfix_to_ndfa(postfix):
 
         _node_data = {"type": node_type}
 
-        node_key, node = graph.add_node(
-            node_data=_node_data
-        )
+        node_key, node = graph.add_node(node_data=_node_data)
 
         for _ in out, out1:
             if _:
@@ -244,30 +231,30 @@ def _postfix_to_ndfa(postfix):
     stackp = []
 
     for _ in postfix:
-        if _ == '.':    # concatenate
+        if _ == ".":  # concatenate
             e2 = pop()
             e1 = pop()
             patch(e1.out, e2.start)
             push(frag(e1.start, e2.out))
-        elif _ == '|':  # alternate
+        elif _ == "|":  # alternate
             e2 = pop()
             e1 = pop()
-            s = state('Split', e1.start, e2.start)
+            s = state("Split", e1.start, e2.start)
             push(frag(s, e1.out + e2.out))
-        elif _ == '?':  # zero or one
+        elif _ == "?":  # zero or one
             e = pop()
-            s = state('Split', e.start, None)
+            s = state("Split", e.start, None)
             push(frag(s, e.out + [s]))
 
-        elif _ == '*':  # zero or more
+        elif _ == "*":  # zero or more
             e = pop()
-            s = state('Split', e.start, None)
+            s = state("Split", e.start, None)
             patch(e.out, s)
             push(frag(s, [s]))
 
-        elif _ == '+':  # one or more
+        elif _ == "+":  # one or more
             e = pop()
-            s = state('Split', e.start, None)
+            s = state("Split", e.start, None)
             patch(e.out, s)
             push(frag(e.start, [s]))
 
@@ -277,7 +264,7 @@ def _postfix_to_ndfa(postfix):
 
     e = pop()
 
-    matchstate = state('Accepting', None, None)
+    matchstate = state("Accepting", None, None)
 
     patch(e.out, matchstate)
 
@@ -336,7 +323,7 @@ def _minimize_ndfa(ndfa):
 
         # create new graph, map previous to new nodes, skipping "Split" nodes.
         for node_key, node_data in enumerate(ndfa.node):
-            if node_data.get('type') == 'Split':
+            if node_data.get("type") == "Split":
                 continue
             new_key, new_node = new_graph.add_node(node_data=node_data)
             node_mappings[node_key] = new_key
@@ -347,22 +334,25 @@ def _minimize_ndfa(ndfa):
     # iterate through original nodes—a list of node attributes
     for node_key, node_data in enumerate(ndfa.node):
         # skip "Split" nodes
-        if node_data.get('type') == 'Split':
+        if node_data.get("type") == "Split":
             continue
         # Do a depth-first search to non-"Split" nodes of children.
         stack = deque(children_of(node_key))
         while stack:
             child_key = stack.popleft()
             # Add children of split node to stack
-            if ndfa.node[child_key].get('type') == 'Split':
+            if ndfa.node[child_key].get("type") == "Split":
                 # reversed to maintain original order
                 stack.extendleft(reversed(children_of(child_key)))
             else:
                 # Add edges from mapped new node to reachable child.
-                if (node_mappings[node_key],
-                   node_mappings[child_key]) not in new_graph.edge_list:
-                    new_graph.add_edge(node_mappings[node_key],
-                                       node_mappings[child_key])
+                if (
+                    node_mappings[node_key],
+                    node_mappings[child_key],
+                ) not in new_graph.edge_list:
+                    new_graph.add_edge(
+                        node_mappings[node_key], node_mappings[child_key]
+                    )
     return new_graph
 
 
@@ -383,7 +373,7 @@ def _ndfa_graph_of_meter(regex):
         Directed-graph representation of NDFA
 
     """
-    postfix = _regex_to_postfix('0('+regex+')')
+    postfix = _regex_to_postfix("0(" + regex + ")")
     ndfa = _postfix_to_ndfa(postfix)
     return ndfa
 
@@ -430,16 +420,15 @@ def _add_subgraph_to_graph(graph, new_graph, accepting_attr):
     accepting_attr : dict
         Attributes to be added to accepting nodes (e.g. meter details)
     """
+
     def children_of(graph, node_key):
         """Find children of node in DirectedGraph."""
         # could move to DirectedGraph
-        return [target for source, target in graph.edge_list
-                if source == node_key]
+        return [target for source, target in graph.edge_list if source == node_key]
 
     def parents_of(graph, node_key):
         """Find marks of node in DirectedGraph."""
-        return [source for source, target in graph.edge_list
-                if target == node_key]
+        return [source for source, target in graph.edge_list if target == node_key]
 
     def child_of_type(graph, node_key, child_type):
         """Find children of particular 'type' in DirectedGraph.
@@ -448,8 +437,10 @@ def _add_subgraph_to_graph(graph, new_graph, accepting_attr):
         children = children_of(graph, node_key)
         level = levels_of(graph)
         for child_key in children:
-            if graph.node[child_key].get('type') == child_type and \
-               contains_cycle(child_key, graph=graph, level=level) is False:
+            if (
+                graph.node[child_key].get("type") == child_type
+                and contains_cycle(child_key, graph=graph, level=level) is False
+            ):
                 return child_key
         return None
 
@@ -479,7 +470,7 @@ def _add_subgraph_to_graph(graph, new_graph, accepting_attr):
         return False
 
     if len(new_graph.node) == 0:
-        new_graph.add_node(node_data={'type': "0"})
+        new_graph.add_node(node_data={"type": "0"})
 
     queue = deque()
     visited = set()
@@ -512,7 +503,7 @@ def _add_subgraph_to_graph(graph, new_graph, accepting_attr):
 
         for child_key in children:
             child_node = graph.node[child_key]
-            child_type = child_node.get('type')
+            child_type = child_node.get("type")
 
             # branch out on nodes receiving cycles
 
@@ -530,13 +521,13 @@ def _add_subgraph_to_graph(graph, new_graph, accepting_attr):
                     )
 
             if not matching_child_key:
-                if child_type == 'Accepting' and accepting_node_key >= 0:
+                if child_type == "Accepting" and accepting_node_key >= 0:
                     matching_child_key = accepting_node_key
                 else:
                     matching_child_key, matching_child = new_graph.add_node(
                         node_data=child_node.copy()
                     )
-                    if child_type == 'Accepting':
+                    if child_type == "Accepting":
                         if accepting_attr:
                             matching_child.update(accepting_attr)
                         accepting_node_key = matching_child_key
