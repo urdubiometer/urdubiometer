@@ -13,7 +13,6 @@ deploy:
   password:
     secure: NyiMaHjXGnGGGNrettowQt3W33W5CIVrE/NMvqgjERvcbqJten6A3oq5DnIApYfZK/WNkl5lBYLpWjBSqhgXAlYt5GFpeUn9XDLdyv5+mlwK30I7pkABvxNpXE6O4LU+xvER/HmVMo676LEFsQmaVG8zG8bJ/Eoqxm7xbmBHY+MoF1q+fauFhoievDWO5JIjBrRYO8CNYnd2yaQJxDSZhJDQHCq7SAnMS7Sx/bLJcx9/Mb55O3Q7LMTDqYh1mLV2HzevtORcUHVg17G0Z+Tuwk+iIkKiYxk+MsEU1/swN36pysudThhlO4opttM25R62i5fAj3bS4lp/Pm2J0ObX9lZz4Y57HKAGq7tucwo2UCCtWWBWynczVmKWiP1pCh+HDEK4HpBOwLSczwC3ioKRURIkP3yveBxtOdz3C3Gs5BSkb9MX4NU3bmlEklDJNbOKJWYpssrvMYkPyJ9kdQBN++ZB+eHPaU9b+PM/eQzFLRsCXpc+ZkjZ6UFja5mkF4V9AkySTp5LkGrzGe2PYLYswoo5ILROFEiAcn0zqYY73I92zPDVQtA8nmQhR4HaV2QpDMoo3lvFB1hZ4iONiCFO7/ojq13Zq7R7ImZlKyEjfyRglVfndiNrOYFvuVK/QfHAo4Di08p9H9bhCd5YkF1/KabKgB4JDqHqoPm6HV0/LOU=
   on:
-    tags: true
+    tags: false
     repo: urdubiometer/urdubiometer
-    python:
-    - 3.5
+    python: 3.7
