@@ -15,4 +15,4 @@ deploy:
   on:
     tags: false
     repo: urdubiometer/urdubiometer
-    python: 3.7
+    python: 3.5
