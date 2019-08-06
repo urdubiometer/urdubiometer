@@ -1,0 +1,23 @@
+# Messages in Urdu BioMeter
+# Copyright (C) 2019 Michigan State University
+# This file is distributed under the same license as the urdubiometer package.
+# 
+# Translators:
+# seanpue <a@seanpue.com>, 2019
+# A. Sean Pue <pue@msu.edu>, 2019
+msgid ""
+msgstr ""
+"Project-Id-Version: Urdu BioMeter\n"
+"Report-Msgid-Bugs-To: pue@msu.edu\n"
+"POT-Creation-Date: 2019-08-06 15:05-0300\n"
+"PO-Revision-Date: 2019-08-06 19:08+0000\n"
+"Last-Translator: seanpue <a@seanpue.com>, 2019\n"
+"Language-Team: Hindi (https://www.transifex.com/urdubiometer-team/teams/102086/hi/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: hi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "hello %s"
+msgstr "हेलो %s"
