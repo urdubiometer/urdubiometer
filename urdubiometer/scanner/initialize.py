@@ -4,35 +4,111 @@
 from collections import deque
 from copy import deepcopy
 from graphtransliterator import DirectedGraph
+import re
+
+#
+# -
+#     -
+#         token_prev:
+#             token_curr:
 
 
 def _constrained_parsers_of(constraints, long_parser, short_parser):
     """
     Create a dict of parsers based on constraints.
 
-    Prunes invalid productions from indicated parser.
+    Prunes invalid productions from parsers. Uses sets to reuse pruned
+    parsers.
 
     Returns
     -------
-    dict
-
+    `dict` of {`str`: `dict` of {`str` of `GraphTransliterator`}}
+        Dictionary keyed by previous metrical unit to next metrical unit,
+        to previous token type, to a GraphTransliterator parser pruned
+        of certain productions.
     """
+
+    def _parser_of(unit):
+        if unit == "=":
+            return long_parser
+        elif unit == "-" or "_":
+            return short_parser
+
+    def _productions_of(parser):
+        productions = set()
+        for _ in parser.rules:
+            productions.add(_.production)
+        return productions
+
     if not constraints:
         return None
 
-    constrained_parsers = deepcopy(constraints)
+    def _expand_settings():
+        constrained_parsers = {}  # deepcopy(constraints)
+        for prev_unit, next_units in constraints.items():
+            constrained_parsers[prev_unit] = {}
+            for next_unit, prev_token_patterns in next_units.items():
+                constrained_parsers[prev_unit][next_unit] = {}
+                prev_parser = _parser_of(prev_unit)
+                prev_productions = _productions_of(prev_parser)
+                for prev_token_pattern, next_tokens in prev_token_patterns.items():
+                    regex = re.compile(prev_token_pattern + "$")
+                    matches = filter(regex.match, prev_productions)
+                    for match in matches:
+                        if not constrained_parsers[prev_unit][next_unit].get(match):
+                            constrained_parsers[prev_unit][next_unit][match] = set()
+                        else:
+                            # add warning?
+                            pass
+                        for _ in next_tokens:
+                            constrained_parsers[prev_unit][next_unit][match].add(_)
+        return constrained_parsers
 
-    for prev_node_key, next_node in constrained_parsers.items():
-        for next_node_key, prev_token in next_node.items():
-            for prev_token_key, productions in prev_token.items():
-                if next_node_key == "=":
-                    parser = long_parser
-                elif next_node_key == "_":
-                    parser = short_parser
-                elif next_node_key == "-":
-                    parser = short_parser
-                prev_token[prev_token_key] = parser.pruned_of(productions)
+    constrained_parsers = _expand_settings()
+    pruned_parsers = {}
+    for prev_unit, next_units in constrained_parsers.items():
+        for next_unit, prev_tokens in next_units.items():
+            if next_unit not in pruned_parsers:
+                pruned_parsers[next_unit] = {}
+            for prev_token, pruneable_productions in prev_tokens.items():
+                pruneable_productions = frozenset(pruneable_productions)
+                if pruneable_productions not in pruned_parsers[next_unit]:
+                    pruned_parsers[next_unit][pruneable_productions] = _parser_of(
+                        next_unit
+                    ).pruned_of(pruneable_productions)
+                constrained_parsers[prev_unit][next_unit][prev_token] = pruned_parsers[
+                    next_unit
+                ][pruneable_productions]
     return constrained_parsers
+
+
+# def _constrained_parsers_of(constraints, long_parser, short_parser):
+#     """
+#     Create a dict of parsers based on constraints.
+#
+#     Prunes invalid productions from indicated parser.
+#
+#     Returns
+#     -------
+#     dict
+#
+#     """
+#     if not constraints:
+#         return None
+#
+#     constrained_parsers = deepcopy(constraints)
+#
+#     for prev_node_key, next_node in constrained_parsers.items():
+#         for next_node_key, prev_token in next_node.items():
+#             for prev_token_key, productions in prev_token.items():
+#                 if next_node_key == "=":
+#                     parser = long_parser
+#                 elif next_node_key == "_":
+#                     parser = short_parser
+#                 elif next_node_key == "-":
+#                     parser = short_parser
+#                 prev_token[prev_token_key] = parser.pruned_of(productions)
+#     return constrained_parsers
 
 
 # ---------- regex to directed graph ----------

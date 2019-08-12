@@ -2,7 +2,7 @@
 #
 # previously matched unit (- or =):
 #   currently matched unit (- or =):
-#     previous match type (str):
+#     previous match type (str) as regular expression ($ is appended):
 #       disallowed match types (list)
 #
 
@@ -23,12 +23,13 @@
     s_cs: [l_c<h+wb>o]
 '_':
   '=':
-    '*': [l_cvbal, l_(bal)cvc<h+wb>, l_cbal, l_cvn<(aa)wb>]
+    '.*': [l_cvbal, l_(bal)cvc<h+wb>, l_cbal, l_cvn<(aa)wb>]
 '=':
   '_':
+    '.*': [s_cz, s_z]
     l_bcsc: [s_v<b>]
     l_bsc: [s_v<b>]
-    l_csc: [s_o, s_v<b>, s_z]
+    l_csc: [s_o, s_v<b>]
   '-':
     l_bcsc: [s_v<b>]
     l_bsc: [s_v<b>]

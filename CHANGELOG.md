@@ -6,13 +6,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unrelease-Maybe]
 - convert tokens to numbers inside ParserRules to improve performance
+- convert rule to number, or add detailed result
 - allow toggle of validation to decrease load speed
 - add minimum tokens to match to graphparser edge constraints
-- switch type=0 to type='Start' in ndfa graph (not possible?)
 - add coverage badge
 - rename DefaultScanner to GhazalScanner
 - variable rules for modern vs. classical language
-
+- adjust code to move long and short unit markers to constants
+- add
 ## [Unreleased-TODO]
 - adjust license to support any additional software (if necessary)
 - confirm settings/transcription.yml is compatible with new UTMO standard
@@ -26,6 +27,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - fix project description (markdown import) on pypi
 - fix code documentation and proofread
 - add black to contributing
+- raise warning/error in constraints if nothing matched or multiple matches
+
+## X.X.X - 2019-XX-XX
+- rewrote constrained_parsers_of to allow for regular expressions in constraints and
+  to reuse already generated parsers
+- added translations/urdubiometer/messages
+- tied in with Transifex
+- adjusted settings/constraints.yml
+- modified scanner/validate.py due to regex use in constraints
+- added scripts/extract_strings.py, scripts/import_po.py, scripts/README.md
 
 ## 0.2.7 - 2019-08-03
 - fixed setup.cfg, setup.py, to correct bumpversion problem with single quotes

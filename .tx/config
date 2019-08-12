@@ -1,0 +1,8 @@
+[main]
+host = https://www.transifex.com
+
+[urdubiometer.messages]
+file_filter = translations/urdubiometer.messages/<lang>.po
+source_file = translations/urdubiometer.messages/en.po
+source_lang = en
+

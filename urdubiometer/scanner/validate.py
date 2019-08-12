@@ -20,7 +20,7 @@ CONSTRAINTS_SCHEMA_STR = """
                         type: dict
                         keysrules:
                             type: string
-                            allowed: ["*"]
+#                            allowed: ["*"]
                         valuesrules:
                             type: list
                             schema:
@@ -33,7 +33,7 @@ CONSTRAINTS_SCHEMA_STR = """
                         type: dict
                         keysrules:
                             type: string
-                            allowed: {short_productions}
+#                            allowed: {short_productions}
                         valuesrules:
                             type: list
                             schema:
@@ -43,7 +43,7 @@ CONSTRAINTS_SCHEMA_STR = """
                         type: dict
                         keysrules:
                             type: string
-                            allowed: {short_productions}
+#                            allowed: {short_productions}
                         valuesrules:
                             type: list
                             schema:
@@ -56,7 +56,7 @@ CONSTRAINTS_SCHEMA_STR = """
                         type: dict
                         keysrules:
                             type: string
-                            allowed: {long_productions}
+#                            allowed: {long_productions}
                         valuesrules:
                             type: list
                             schema:
@@ -66,7 +66,7 @@ CONSTRAINTS_SCHEMA_STR = """
                         type: dict
                         keysrules:
                             type: string
-                            allowed: {long_productions}
+#                            allowed: {long_productions}
                         valuesrules:
                             type: list
                             schema:
@@ -76,7 +76,7 @@ CONSTRAINTS_SCHEMA_STR = """
                         type: dict
                         keysrules:
                             type: string
-                            allowed: {long_productions}
+#                            allowed: {long_productions}
                         valuesrules:
                             type: list
                             schema:

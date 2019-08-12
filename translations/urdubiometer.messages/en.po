@@ -3,8 +3,7 @@
 # This file is distributed under the same license as the urdubiometer package.
 #
 # Translators:
-# A. Sean Pue <pue@msu.edu>, 2019 
-
+# A. Sean Pue <pue@msu.edu>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Urdu BioMeter\n"
@@ -13,11 +12,918 @@ msgstr ""
 "PO-Revision-Date: 2019-06-06 15:05-0300\n"
 "Last-Translator: A. Sean PUe <pue@msu.edu>\n"
 "Language-Team: English (http://www.transifex.com/projects/p/urdubiometer/language/en/)\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Here your translation should NOT say English but the name of your language
+#. instead
+msgid "LANGUAGE"
+msgstr "English"
 
 msgid "hello %s"
 msgstr "hello %s"
+
+msgid "SHORT"
+msgstr "Short"
+
+msgid "LONG"
+msgstr "Long"
+
+#. b c v_fut
+msgid "bs_cv_fut__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c v_fut
+msgid "bs_cv_fut__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c v_fut n
+msgid "bs_cv_futn__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c v_fut n
+msgid "bs_cv_futn__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. (b al) c v c<h+wb>
+msgid "l_(bal)cvc<h+wb>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. (b al) c v c<h+wb>
+msgid "l_(bal)cvc<h+wb>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. (b c s) v<ii+z> z
+msgid "l_(bcs)v<ii+z>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. (b c s) v<ii+z> z
+msgid "l_(bcs)v<ii+z>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b al
+msgid "l_bal__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b al
+msgid "l_bal__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c c s c
+msgid "l_bccsc__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c c s c
+msgid "l_bccsc__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c c v
+msgid "l_bccv__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c c v
+msgid "l_bccv__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c c v n
+msgid "l_bccvn__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c c v n
+msgid "l_bccvn__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c s c
+msgid "l_bcsc__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c s c
+msgid "l_bcsc__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c s c<h+wb>
+msgid "l_bcsc<h+wb>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c s c<h+wb>
+msgid "l_bcsc<h+wb>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c s n c
+msgid "l_bcsnc__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c s n c
+msgid "l_bcsnc__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c s n c<h+wb>
+msgid "l_bcsnc<h+wb>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c s n c<h+wb>
+msgid "l_bcsnc<h+wb>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c v
+msgid "l_bcv__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c v
+msgid "l_bcv__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c v<aa+z>
+msgid "l_bcv<aa+z>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c v<aa+z>
+msgid "l_bcv<aa+z>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c v<ii+o>
+msgid "l_bcv<ii+o>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c v<ii+o>
+msgid "l_bcv<ii+o>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c v<ii+z>
+msgid "l_bcv<ii+z>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c v<ii+z>
+msgid "l_bcv<ii+z>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c v_flex
+msgid "l_bcv_flex__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c v_flex
+msgid "l_bcv_flex__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c v_fut
+msgid "l_bcv_fut__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c v_fut
+msgid "l_bcv_fut__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c v_fut n
+msgid "l_bcv_futn__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c v_fut n
+msgid "l_bcv_futn__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c v b al
+msgid "l_bcvbal__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c v b al
+msgid "l_bcvbal__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c v n
+msgid "l_bcvn__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c v n
+msgid "l_bcvn__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b dul_han
+msgid "l_bdul_han__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b dul_han
+msgid "l_bdul_han__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b duul_haa
+msgid "l_bduul_haa__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b duul_haa
+msgid "l_bduul_haa__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b o
+msgid "l_bo__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b o
+msgid "l_bo__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b pahun
+msgid "l_bpahun__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b pahun
+msgid "l_bpahun__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. (o) s c | b s c
+msgid "l_bsc__SHORT_DESCRIPTION"
+msgstr ""
+
+#. (o) s c | b s c
+msgid "l_bsc__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b s c<h+wb>
+msgid "l_bsc<h+wb>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b s c<h+wb>
+msgid "l_bsc<h+wb>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b s c n
+msgid "l_bscn__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b s c n
+msgid "l_bscn__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b s n c
+msgid "l_bsnc__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b s n c
+msgid "l_bsnc__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b v
+msgid "l_bv__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b v
+msgid "l_bv__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b v<aur>
+msgid "l_bv<aur>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b v<aur>
+msgid "l_bv<aur>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b v<aur> c
+msgid "l_bv<aur>c__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b v<aur> c
+msgid "l_bv<aur>c__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b v n
+msgid "l_bvn__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b v n
+msgid "l_bvn__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. (v) c<h+wb> b s c
+msgid "l_c<h+wb>bsc__SHORT_DESCRIPTION"
+msgstr ""
+
+#. (v) c<h+wb> b s c
+msgid "l_c<h+wb>bsc__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. (v) c<h+wb> b v
+msgid "l_c<h+wb>bv__SHORT_DESCRIPTION"
+msgstr ""
+
+#. (v) c<h+wb> b v
+msgid "l_c<h+wb>bv__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c<h+wb> o | c<h+wb> b o
+msgid "l_c<h+wb>o__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c<h+wb> o | c<h+wb> b o
+msgid "l_c<h+wb>o__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c b al
+msgid "l_cbal__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c b al
+msgid "l_cbal__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c b o
+msgid "l_cbo__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c b o
+msgid "l_cbo__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c b s c
+msgid "l_cbsc__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c b s c
+msgid "l_cbsc__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c b s n c (c)
+msgid "l_cbsnc__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c b s n c (c)
+msgid "l_cbsnc__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c b v
+msgid "l_cbv__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c b v
+msgid "l_cbv__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c b v<aur>
+msgid "l_cbv<aur>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c b v<aur>
+msgid "l_cbv<aur>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c b v<aur> c
+msgid "l_cbv<aur>c__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c b v<aur> c
+msgid "l_cbv<aur>c__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c b v n
+msgid "l_cbvn__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c b v n
+msgid "l_cbvn__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c o
+msgid "l_co__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c o
+msgid "l_co__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c s c
+msgid "l_csc__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c s c
+msgid "l_csc__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c s c<h+wb>
+msgid "l_csc<h+wb>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c s c<h+wb>
+msgid "l_csc<h+wb>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c s n c
+msgid "l_csnc__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c s n c
+msgid "l_csnc__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c v
+msgid "l_cv__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c v
+msgid "l_cv__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c v<aa+z>
+msgid "l_cv<aa+z>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c v<aa+z>
+msgid "l_cv<aa+z>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c v<ii+o>
+msgid "l_cv<ii+o>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c v<ii+o>
+msgid "l_cv<ii+o>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c v<ii+z>
+msgid "l_cv<ii+z>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c v<ii+z>
+msgid "l_cv<ii+z>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c v_fut
+msgid "l_cv_fut__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c v_fut
+msgid "l_cv_fut__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c v_fut n
+msgid "l_cv_futn__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c v_fut n
+msgid "l_cv_futn__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c v b al
+msgid "l_cvbal__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c v b al
+msgid "l_cvbal__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c v n
+msgid "l_cvn__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c v n
+msgid "l_cvn__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c v n<(aa)wb> | c v n<(aa)wb>
+msgid "l_cvn<(aa)wb>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c v n<(aa)wb> | c v n<(aa)wb>
+msgid "l_cvn<(aa)wb>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c z
+msgid "l_cz__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c z
+msgid "l_cz__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. o
+msgid "l_o__SHORT_DESCRIPTION"
+msgstr ""
+
+#. o
+msgid "l_o__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. v
+msgid "l_v__SHORT_DESCRIPTION"
+msgstr ""
+
+#. v
+msgid "l_v__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. v<ii+o> (o)
+msgid "l_v<ii+o>(o)__SHORT_DESCRIPTION"
+msgstr ""
+
+#. v<ii+o> (o)
+msgid "l_v<ii+o>(o)__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. v<ii+z> z
+msgid "l_v<ii+z>z__SHORT_DESCRIPTION"
+msgstr ""
+
+#. v<ii+z> z
+msgid "l_v<ii+z>z__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. z
+msgid "l_z__SHORT_DESCRIPTION"
+msgstr ""
+
+#. z
+msgid "l_z__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. (al) s
+msgid "s_(al)s__SHORT_DESCRIPTION"
+msgstr ""
+
+#. (al) s
+msgid "s_(al)s__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. (b) c c (b)
+msgid "s_<b>cc<b>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. (b) c c (b)
+msgid "s_<b>cc<b>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. (b) c s (b al)
+msgid "s_<b>cs(bal)__SHORT_DESCRIPTION"
+msgstr ""
+
+#. (b) c s (b al)
+msgid "s_<b>cs(bal)__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. (c) c c (b)
+msgid "s_<c>cc<b>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. (c) c c (b)
+msgid "s_<c>cc<b>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. (o) s
+msgid "s_<o>s__SHORT_DESCRIPTION"
+msgstr ""
+
+#. (o) s
+msgid "s_<o>s__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. (v) c c (b)
+msgid "s_<v>cc<b>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. (v) c c (b)
+msgid "s_<v>cc<b>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c (b)
+msgid "s_bc<b>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c (b)
+msgid "s_bc<b>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c s
+msgid "s_bcs__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c s
+msgid "s_bcs__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c s c<h+wb>
+msgid "s_bcsc<h+wb>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c s c<h+wb>
+msgid "s_bcsc<h+wb>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c s n
+msgid "s_bcsn__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c s n
+msgid "s_bcsn__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c v<aa+z> | c v<aa+z>
+msgid "s_bcv<aa+z>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c v<aa+z> | c v<aa+z>
+msgid "s_bcv<aa+z>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c v (b)
+msgid "s_bcv<b>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c v (b)
+msgid "s_bcv<b>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c v<ii+o>
+msgid "s_bcv<ii+o>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c v<ii+o>
+msgid "s_bcv<ii+o>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c v<ii+z>
+msgid "s_bcv<ii+z>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c v<ii+z>
+msgid "s_bcv<ii+z>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c v (o)
+msgid "s_bcv<o>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c v (o)
+msgid "s_bcv<o>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c v (z)
+msgid "s_bcv<z>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c v (z)
+msgid "s_bcv<z>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c v_flex
+msgid "s_bcv_flex__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c v_flex
+msgid "s_bcv_flex__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b c v n (b)
+msgid "s_bcvn<b>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b c v n (b)
+msgid "s_bcvn<b>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b dul_han
+msgid "s_bdul_han__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b dul_han
+msgid "s_bdul_han__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b nah
+msgid "s_bnah__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b nah
+msgid "s_bnah__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b o
+msgid "s_bo__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b o
+msgid "s_bo__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b s
+msgid "s_bs__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b s
+msgid "s_bs__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b s n
+msgid "s_bsn__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b s n
+msgid "s_bsn__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b tum
+msgid "s_btum__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b tum
+msgid "s_btum__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b v<aur> (c b s c) | b v<aur> (c b s n c)
+msgid "s_bv<aur_cbsc>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b v<aur> (c b s c) | b v<aur> (c b s n c)
+msgid "s_bv<aur_cbsc>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. b v<aur> (c b v)
+msgid "s_bv<aur_cbv>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. b v<aur> (c b v)
+msgid "s_bv<aur_cbv>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c
+msgid "s_c__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c
+msgid "s_c__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c<h+wb>
+msgid "s_c<h+wb>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c<h+wb>
+msgid "s_c<h+wb>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c<h+wb> o | c<h+wb> b o
+msgid "s_c<h+wb>o__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c<h+wb> o | c<h+wb> b o
+msgid "s_c<h+wb>o__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. (c) c b s n (c v)
+msgid "s_cbcn__SHORT_DESCRIPTION"
+msgstr ""
+
+#. (c) c b s n (c v)
+msgid "s_cbcn__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c b o
+msgid "s_cbo__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c b o
+msgid "s_cbo__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c b s
+msgid "s_cbs__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c b s
+msgid "s_cbs__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c o
+msgid "s_co__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c o
+msgid "s_co__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c s
+msgid "s_cs__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c s
+msgid "s_cs__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c s c<h+wb>
+msgid "s_csc<h+wb>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c s c<h+wb>
+msgid "s_csc<h+wb>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c s n
+msgid "s_csn__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c s n
+msgid "s_csn__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c v (b)
+msgid "s_cv<b>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c v (b)
+msgid "s_cv<b>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c v<ii+o>
+msgid "s_cv<ii+o>i__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c v<ii+o>
+msgid "s_cv<ii+o>i__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c v<ii+z>
+msgid "s_cv<ii+z>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c v<ii+z>
+msgid "s_cv<ii+z>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c v (z)
+msgid "s_cv<z>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c v (z)
+msgid "s_cv<z>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c v_fut
+msgid "s_cv_fut__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c v_fut
+msgid "s_cv_fut__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c v_fut n
+msgid "s_cv_futn__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c v_fut n
+msgid "s_cv_futn__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c v n (b)
+msgid "s_cvn<b>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c v n (b)
+msgid "s_cvn<b>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. c z
+msgid "s_cz__SHORT_DESCRIPTION"
+msgstr ""
+
+#. c z
+msgid "s_cz__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. nah
+msgid "s_nah__SHORT_DESCRIPTION"
+msgstr ""
+
+#. nah
+msgid "s_nah__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. o
+msgid "s_o__SHORT_DESCRIPTION"
+msgstr ""
+
+#. o
+msgid "s_o__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. v (b)
+msgid "s_v<b>__SHORT_DESCRIPTION"
+msgstr ""
+
+#. v (b)
+msgid "s_v<b>__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. v<ii+z> z
+msgid "s_v<ii+z>z__SHORT_DESCRIPTION"
+msgstr ""
+
+#. v<ii+z> z
+msgid "s_v<ii+z>z__WITH_VALUES_DESCRIPTION"
+msgstr ""
+
+#. z
+msgid "s_z__SHORT_DESCRIPTION"
+msgstr ""
+
+#. z
+msgid "s_z__WITH_VALUES_DESCRIPTION"
+msgstr ""
