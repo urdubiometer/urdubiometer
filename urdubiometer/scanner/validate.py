@@ -133,7 +133,7 @@ def validate_meters_list(meters_list):
                     fp7tag:
                         type: string
                         required: False
-                    fp7pattern:
+                    pattern:
                         type: string
                         required: False
                     regex_pattern:

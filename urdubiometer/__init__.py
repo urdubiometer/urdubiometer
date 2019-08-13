@@ -8,7 +8,7 @@ __version__ = "0.2.7"
 
 __all__ = ["scanner"]
 
-from .scanner import DefaultScanner, Scanner, NodeMatch, ScanResult, UnitMatch
+from .scanner import GhazalScanner, Scanner, NodeMatch, ScanResult, UnitMatch
 
-__all__ = ["DefaultScanner", "Scanner", "NodeMatch", "ScanResult", "UnitMatch"]
+__all__ = ["GhazalScanner", "Scanner", "NodeMatch", "ScanResult", "UnitMatch"]
 # from urdubiometer.graphparser import GraphParser, ParserOutput, ParserRule # noqa

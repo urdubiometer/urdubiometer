@@ -6,5 +6,5 @@ __author__ = """A. Sean Pue"""
 __email__ = "a@seanpue.com"
 
 from .scanner import *  # noqa
-from .default import *  # noqa
+from .ghazal import *  # noqa
 from .types import *  # noqa

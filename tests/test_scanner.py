@@ -5,24 +5,32 @@
 import pytest
 
 import yaml
+
 # from urdubiometer import GraphTransliterator
 from urdubiometer.scanner import Scanner
-from urdubiometer import DefaultScanner
+from urdubiometer import GhazalScanner
 from graphtransliterator import GraphTransliterator
+
 # import urdubiometer.scanner.default
 from urdubiometer.scanner.initialize import (
-    _regex_to_postfix, _postfix_to_ndfa,
-    _minimized_graph_of_meter
+    _regex_to_postfix,
+    _postfix_to_ndfa,
+    _minimized_graph_of_meter,
 )
 
 
 def test_minimized_graph_of_meter():
     minimized_graph = _minimized_graph_of_meter("===(-)")
     assert minimized_graph
-    assert minimized_graph.node == \
-        [{'type': '0'}, {'type': '='}, {'type': '='}, {'type': '='},
-         {'type': '-'}, {'type': 'Accepting'}]
-    assert _minimized_graph_of_meter('(-|=)==(=|-)')
+    assert minimized_graph.node == [
+        {"type": "0"},
+        {"type": "="},
+        {"type": "="},
+        {"type": "="},
+        {"type": "-"},
+        {"type": "Accepting"},
+    ]
+    assert _minimized_graph_of_meter("(-|=)==(=|-)")
 
 
 def test_validator():
@@ -137,9 +145,10 @@ def test_validator():
     #             "<bcss>": [s<c>]
     # """)
 
-    constraints_bad = {'bad': 'constraints'}
+    constraints_bad = {"bad": "constraints"}
 
-    meters_list = yaml.safe_load("""
+    meters_list = yaml.safe_load(
+        """
     -
       id : "1"
       regex_pattern : ===(-)
@@ -152,50 +161,75 @@ def test_validator():
       id : "2"
       regex_pattern : (=-=|===)+==(=|-)
       name : meter with cycles
-    """)
+    """
+    )
     meters_list_bad = {"bad": "meters_list"}
 
-    transcription_parser_ok = GraphTransliterator.from_yaml(
-        transcriptionYAML_ok
-    )
+    transcription_parser_ok = GraphTransliterator.from_yaml(transcriptionYAML_ok)
     long_parser_ok = GraphTransliterator.from_yaml(longYAML_ok)
     short_parser_ok = GraphTransliterator.from_yaml(shortYAML_ok)
 
-    transcription_parser_bad = GraphTransliterator.from_yaml(
-        transcriptionYAML_bad
-    )
+    transcription_parser_bad = GraphTransliterator.from_yaml(transcriptionYAML_bad)
     long_parser_bad = GraphTransliterator.from_yaml(longYAML_bad)
     short_parser_bad = GraphTransliterator.from_yaml(shortYAML_bad)
 
-    assert Scanner(transcription_parser_ok, long_parser_ok, short_parser_ok,
-                   constraints, meters_list)
+    assert Scanner(
+        transcription_parser_ok,
+        long_parser_ok,
+        short_parser_ok,
+        constraints,
+        meters_list,
+    )
 
     with pytest.raises(ValueError):
-        Scanner(transcription_parser_ok, long_parser_bad, short_parser_ok,
-                constraints,
-                meters_list)
+        Scanner(
+            transcription_parser_ok,
+            long_parser_bad,
+            short_parser_ok,
+            constraints,
+            meters_list,
+        )
 
     with pytest.raises(ValueError):
-        Scanner(transcription_parser_ok, long_parser_ok, short_parser_bad,
-                constraints,
-                meters_list)
+        Scanner(
+            transcription_parser_ok,
+            long_parser_ok,
+            short_parser_bad,
+            constraints,
+            meters_list,
+        )
 
     with pytest.raises(ValueError):
-        Scanner(transcription_parser_bad, long_parser_ok, short_parser_ok,
-                constraints, meters_list)
+        Scanner(
+            transcription_parser_bad,
+            long_parser_ok,
+            short_parser_ok,
+            constraints,
+            meters_list,
+        )
     # test bad constraints
     with pytest.raises(ValueError):
-        Scanner(transcription_parser_ok, long_parser_ok, short_parser_ok,
-                constraints_bad, meters_list)
+        Scanner(
+            transcription_parser_ok,
+            long_parser_ok,
+            short_parser_ok,
+            constraints_bad,
+            meters_list,
+        )
     # test bad meters_list
     with pytest.raises(ValueError):
-        Scanner(transcription_parser_ok, long_parser_ok, short_parser_ok,
-                constraints, meters_list_bad)
+        Scanner(
+            transcription_parser_ok,
+            long_parser_ok,
+            short_parser_ok,
+            constraints,
+            meters_list_bad,
+        )
 
 
 def test_regex_to_postfix():
     """Test regex to postfix conversion (with concatenation)."""
-    assert _regex_to_postfix('abc') == "ab.c."
+    assert _regex_to_postfix("abc") == "ab.c."
     assert _regex_to_postfix("ab|c") == "ab.c|"
     assert _regex_to_postfix("ab+c") == "ab+.c."
     assert _regex_to_postfix("a(bb)+c") == "abb.+.c."
@@ -210,7 +244,7 @@ def test_regex_to_postfix():
 
 def test_postfix_to_ndfa():
     """Test postfix to ndfa (with concatenation)."""
-    for regex in ('abc', 'ab|c', 'ab+c', 'a(bb)+c', 'a(bb)*c'):
+    for regex in ("abc", "ab|c", "ab+c", "a(bb)+c", "a(bb)*c"):
         postfix = _regex_to_postfix(regex)
         assert _postfix_to_ndfa(postfix)
 
@@ -326,45 +360,67 @@ def test_constraints():
         """
     )
 
-    scanner = Scanner(transcription_parser,
-                      long_parser,
-                      short_parser,
-                      constraints,
-                      meters_list)
+    scanner = Scanner(
+        transcription_parser, long_parser, short_parser, constraints, meters_list
+    )
 
-    assert scanner._constrained_parsers['-']['-']['s<a>']._graph.node[0] == \
-        {'ordered_children': {}, 'type': 'Start'}
+    assert scanner._constrained_parsers["-"]["-"]["s<a>"]._graph.node[0] == {
+        "ordered_children": {},
+        "type": "Start",
+    }
 
 
 def test_scanner():
     """Test scanner."""
-    scanner = DefaultScanner()
+    scanner = GhazalScanner()
     assert scanner.scan("naqsh faryaadii hai kis kii sho;xii-e ta;hriir kaa")
     # test first_only
     scanner._post_scan_filter = None  # remove filter
-    assert len(scanner.scan('ja;zbah-e be-i;xtiyaar-e shauq dekhaa chaahiye',
-                            show_feet=True, first_only=True)) == 1
+    assert (
+        len(
+            scanner.scan(
+                "ja;zbah-e be-i;xtiyaar-e shauq dekhaa chaahiye",
+                show_feet=True,
+                first_only=True,
+            )
+        )
+        == 1
+    )
     # test graph_details
-    _scan = scanner.scan('ja;zbah-e be-i;xtiyaar-e shauq dekhaa chaahiye',
-                         graph_details=True)
+    _scan = scanner.scan(
+        "ja;zbah-e be-i;xtiyaar-e shauq dekhaa chaahiye", graph_details=True
+    )
     assert _scan[0].matches[0].node_key >= 0
     assert _scan[0].matches[0].parent_key >= 0
     # test show_feet
-    assert scanner.scan("naqsh faryaadii hai kis kii sho;xii-e ta;hriir kaa",
-                        show_feet=True)[0].scan == '=-==/=-==/=-==/=-='
+    assert (
+        scanner.scan(
+            "naqsh faryaadii hai kis kii sho;xii-e ta;hriir kaa", show_feet=True
+        )[0].scan
+        == "=-==/=-==/=-==/=-="
+    )
     assert scanner.translation_graph
+
+
+def test_mir_metters():
+    assert GhazalScanner(with_mir=True).scan(
+        "ul;tii ho ga))ii sab tadbiire;n kuchh nah davaa ne kaam kiyaa"
+    )
+    assert not GhazalScanner(with_mir=False).scan(
+        "ul;tii ho ga))ii sab tadbiire;n kuchh nah davaa ne kaam kiyaa"
+    )
 
 
 def test_transcribe():
     """Test transcribe."""
-    scanner = DefaultScanner()
-    assert scanner.transcribe('shaa') == 'cv'
+    scanner = GhazalScanner()
+    assert scanner.transcribe("shaa") == "cv"
 
 
 def test_default_scanner_filter_scans():
     """Test scanner.default.filter_scans()."""
 
-    scanner = DefaultScanner()
+    scanner = GhazalScanner()
     scanner.scan("buu-e gul naalah-e dil duud-e chiraa;g-e ma;hfil")
     # scanner._post_scan_filter = None # turn off filters
     # scans = scanner.scan('buu-e gul naalah-e dil duud-e chiraa;g-e ma;hfil')

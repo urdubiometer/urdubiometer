@@ -1,0 +1,12 @@
+- id: mir_15_regular
+  name: Mir's meter - 15 - regular
+  notes: Total of 15 long units (where short=2)
+  pattern: = ( = ) / = ( = ) / = ( = ) / = = // = ( = ) / = ( = ) / = ( = ) / =
+  regex_pattern: =(=|--)=(=|--)=(=|--)===(=|--)=(=|--)=(=|--)=(_)?
+  genre: ghazal
+# - id: mir_8_regular
+#   name: Mir's meter - 8 - regular
+#   notes: Modern ghazal
+#   pattern: = ( = ) / = ( = ) / = ( = ) / = =
+#   regex_pattern: =(=|--)=(=|--)=(=|--)==
+#   genre: ghazal

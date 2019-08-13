@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Default metrical scanner, for Urdu ghazal.
+Ghazal metrical scanner.
 
 Loads from urdubiometer/settings.
 """
@@ -29,6 +29,9 @@ constraints_filename = pkg_resources.resource_filename(
 )
 meters_filename = pkg_resources.resource_filename(
     "urdubiometer", "settings/ghazal_meters.yml"
+)
+mir_meters_filename = pkg_resources.resource_filename(
+    "urdubiometer", "settings/mir_meters.yml"
 )
 
 
@@ -74,7 +77,7 @@ def filter_scans(scans):
 def _gen_possible_feet(meters_list):
     """Generate possible feet from a meters list."""
 
-    withfeet = [_["fp7pattern"].replace(" ", "") for _ in meters_list]
+    withfeet = [_["pattern"].replace(" ", "") for _ in meters_list]
     poss_feet = []
     for _ in withfeet:
         if "*" in _:
@@ -94,25 +97,30 @@ def _gen_possible_feet(meters_list):
     return scans_with_feet
 
 
-class DefaultScanner(Scanner):
-    """Default scanner for Urdu ghazal (without Mir's meter).
-
-    Loads meters list from Pritchett.
+class GhazalScanner(Scanner):
+    """Ghazal scanner for Urdu ghazal.
 
     Parameters
     ----------
     meters_list: : dict or None
+    with_mir : bool
+        Allow Mir meters
     meters_filter : :class:`function` or None
         filter returning subsection of scanner's meter list
     """
 
     def find_feet(self, scan):
         """str: Finds feet based on a scan."""
-        return self._scans_with_feet[scan]
+        return self._scans_with_feet.get(scan)
 
-    def __init__(self, meters_list=None, find_feet=None, meters_filter=None):
+    def __init__(
+        self, meters_list=None, find_feet=None, meters_filter=None, with_mir=True
+    ):
         if not meters_list:
             meters_list = _load_yaml(meters_filename)
+            if with_mir:
+                mir_meters = _load_yaml(mir_meters_filename)
+                meters_list = meters_list + mir_meters
             self._scans_with_feet = _gen_possible_feet(meters_list)
             find_feet = self.find_feet
         if meters_filter:

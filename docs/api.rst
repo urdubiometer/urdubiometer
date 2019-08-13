@@ -6,7 +6,7 @@ is below.
 
 Public members can (and should) be imported from :class:`urdubiometer`, e.g.::
 
-  from urdubiometer import Scanner, DefaultScanner
+  from urdubiometer import Scanner, GhazalScanner
 
 .. module:: urdubiometer
 
@@ -16,5 +16,5 @@ Core Classes
 .. autoclass:: Scanner
    :members:
 
-   .. autoclass:: DefaultScanner
+   .. autoclass:: GhazalScanner
       :members:

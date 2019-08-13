@@ -9,7 +9,7 @@ import urdubiometer
 
 def _load_scanner(scanner_file):
     """
-    Load scanner from a pickle, otherwise return DefaultScanner.
+    Load scanner from a pickle, otherwise return GhazalScanner.
 
     Raises
     ------
@@ -17,7 +17,7 @@ def _load_scanner(scanner_file):
 
     """
     if not scanner_file:
-        scanner = urdubiometer.DefaultScanner()
+        scanner = urdubiometer.GhazalScanner()
     else:
         with open(scanner_file, "rb") as f:
             scanner = pickle.load(f)
@@ -83,7 +83,7 @@ def info():
     "-sf",
     envvar="URDUBIOMETER_SCANNER_FILE",
     type=click.Path(exists=True),
-    help="Pickle file of scanner. (DefaultScanner otherwise).",
+    help="Pickle file of scanner. (GhazalScanner otherwise).",
 )
 def meters_list(output_format, scanner_file):
     """Echo meters list."""
@@ -100,7 +100,7 @@ def meters_list(output_format, scanner_file):
     "-s",
     envvar="URDUBIOMETER_SCANNER_FILE",
     type=click.Path(exists=True),
-    help="Pickle file of scanner. (DefaultScanner otherwise).",
+    help="Pickle file of scanner. (GhazalScanner otherwise).",
 )
 @click.option(
     "--output_format",

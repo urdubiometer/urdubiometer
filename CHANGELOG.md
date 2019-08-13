@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - allow toggle of validation to decrease load speed
 - add minimum tokens to match to graphparser edge constraints
 - add coverage badge
-- rename DefaultScanner to GhazalScanner
+- rename GhazalScanner to GhazalScanner
 - variable rules for modern vs. classical language
 - adjust code to move long and short unit markers to constants
 - change rule_found to rule_id
@@ -29,17 +29,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - fix code documentation and proofread
 - add black to contributing
 - raise warning/error in constraints if nothing matched or multiple matches
+- add feet to mir meters
 
-## 0.2.7 - 2019-XX-XX
-- rewrote constrained_parsers_of to allow for regular expressions in constraints and
-  to reuse already generated parsers
+## 0.2.8 - 2019-08-13
+/mir_meters.yml
+- renamed DefaultScanner to GhazalScanner
+- added basic Mir meters in settings/mir_meters.yml
+- changed show_feet for missing Mir feet
+- added with_mir parameter to GhazalScanner
+- renamed default.py to ghazal.py
+- rewrote constrained_parsers_of to allow for regular expressions in constraints and to reuse already generated parsers
 - added translations/urdubiometer/messages
-- tied in with Transifex
 - adjusted settings/constraints.yml
 - modified scanner/validate.py due to regex use in constraints
+- preliminary tie in with Transifex
 - added scripts/extract_strings.py, scripts/import_po.py, scripts/README.md
 - adjusted .travis.yml
-- added short vowels
+- added short long vowels to transcription.yml
 
 ## 0.2.7 - 2019-08-03
 - fixed setup.cfg, setup.py, to correct bumpversion problem with single quotes

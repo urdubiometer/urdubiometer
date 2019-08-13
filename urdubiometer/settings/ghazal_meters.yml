@@ -2,7 +2,7 @@
   id: "1"
   name: hazaj musaddas a;xram ashtar ma;h;zuuf
   notes: "May be used with #9."
-  fp7pattern: "= = = / = - = / - = ="
+  pattern: "= = = / = - = / - = ="
   regex_pattern: "====-=-==(_)?"
   fp7tag: "G19"
   genre: ghazal
@@ -10,21 +10,21 @@
   id: "2"
   name: mutaqaarib mu;samman a;sram
   notes: "Has caesura."
-  fp7pattern: "= = / - = = // = = / - = ="
+  pattern: "= = / - = = // = = / - = ="
   regex_pattern: "==-==(_)?==-==(_)?"
   genre: ghazal
 -
   id: "3"
   name: rajaz mu;samman saalim
   notes: ""
-  fp7pattern: "= = - = / = = - = / = = - = / = = - ="
+  pattern: "= = - = / = = - = / = = - = / = = - ="
   regex_pattern: "==-===-===-===-=(_)?"
   genre: ghazal
 -
   id: "4"
   name: mu.zaari(( mu;samman a;xrab
   notes: "Has caesura."
-  fp7pattern: "= = - / = - = = // = = - / = - = ="
+  pattern: "= = - / = - = = // = = - / = - = ="
   regex_pattern: "==-=-==(_)?==-=-==(_)?"
   fp7tag: "G10"
   genre: ghazal
@@ -32,7 +32,7 @@
   id: "5"
   name: mu.zaari(( mu;samman a;xrab makfuuf ma;h;zuuf
   notes: ""
-  fp7pattern: "= = - / = - = - / - = = - / = - ="
+  pattern: "= = - / = - = - / - = = - / = - ="
   regex_pattern: "==-=-=--==-=-=(_)?"
   fp7tag: "G3"
   genre: ghazal
@@ -40,14 +40,14 @@
   id: "6"
   name: mutadaarik mu;samman mu.zaa((af maq:tuu(( ma;xbuun
   notes: "Very rare. May also be used in a flexible form in which any odd-numbered long may be replaced by two shorts."
-  fp7pattern: "= = / - - = / = = / = = / = = / - - = / = = / = ="
+  pattern: "= = / - - = / = = / = = / = = / - - = / = = / = ="
   regex_pattern: "==--=======--=====(_)?"
   genre: ghazal
 -
   id: "7"
   name: hazaj mu;samman a;xrab
   notes: "Has caesura."
-  fp7pattern: "= = - / - = = = // = = - / - = = ="
+  pattern: "= = - / - = = = // = = - / - = = ="
   regex_pattern: "==--===(_)?==--===(_)?"
   fp7tag: "G18"
   genre: ghazal
@@ -55,7 +55,7 @@
   id: "8"
   name: hazaj mu;samman a;xrab makfuuf ma;h;zuuf
   notes: "A note for those with theoretical interests: Mir's ghazal M{618} is in this meter. In its first line, the two short syllables in the middle of the line are replaced by one long syllable: din duurii chaman me;N jo ham shaam kare;Nge . This is the kind of thing that readily happens in the rubaa((ii meters (see section 6.3 below); and indeed, this meter is very close to the first ruba'i meter in the list. In several decades of ghazal reading, this one line is the only such example in this meter that I have ever seen. It's rare, but it's there. But since it's so rare, I cannot formulate a practical rule about when to expect it. I have discussed the theory of this with S. R. Faruqi (July 2017); he advises me to refer serious students of metrical theory to the chapter on taskiin-e ausa:t in his book ((aruu.z aahang aur bayaan."
-  fp7pattern: "= = - / - = = - / - = = - / - = ="
+  pattern: "= = - / - = = - / - = = - / - = ="
   regex_pattern: "==--==--==--==(_)?"
   fp7tag: "G13"
   genre: ghazal
@@ -63,7 +63,7 @@
   id: "9"
   name: hazaj musaddas a;xrab maqbuu.z ma;h;zuuf
   notes: "May be used with #1."
-  fp7pattern: "= = - / - = - = / - = ="
+  pattern: "= = - / - = - = / - = ="
   regex_pattern: "==--=-=-==(_)?"
   fp7tag: "G19"
   genre: ghazal
@@ -71,7 +71,7 @@
   id: "10"
   name: ramal mu;samman ma;h;zuuf
   notes: ""
-  fp7pattern: "= - = = / = - = = / = - = = / = - ="
+  pattern: "= - = = / = - = = / = - = = / = - ="
   regex_pattern: "=-===-===-===-=(_)?"
   fp7tag: "G1"
   genre: ghazal
@@ -79,7 +79,7 @@
   id: "11"
   name: ramal musaddas ma;h;zuuf
   notes: ""
-  fp7pattern: "= - = = / = - = = / = - ="
+  pattern: "= - = = / = - = = / = - ="
   regex_pattern: "=-===-===-=(_)?"
   fp7tag: "G14"
   genre: ghazal
@@ -87,28 +87,28 @@
   id: "12"
   name: mutadaarik mu;samman mu.zaa((af saalim
   notes: "Sometimes used with only four feet; in this case the [mu.zaa((af] is dropped from its name."
-  fp7pattern: "= - = / = - = / = - = / = - = / = - = / = - = / = - = / = - ="
+  pattern: "= - = / = - = / = - = / = - = / = - = / = - = / = - = / = - ="
   regex_pattern: "=-==-==-==-==-==-==-==-=(_)?"
   genre: ghazal
 -
   id: "12b"
   name: mutadaarik mu;samman saalim
   notes: "From 12: Sometimes used with only four feet; in this case the [mu.zaa((af] is dropped from its name."
-  fp7pattern: "= - = / = - = / = - = / = - ="
+  pattern: "= - = / = - = / = - = / = - ="
   regex_pattern: "=-==-==-==-=(_)?"
   genre: ghazal
 -
   id: "13"
   name: mutadaarik mu;samman maq:tuu(( ma;h;zuuf } [mutadaarik mu;samman maq:tuu(( ma;h;zuuf]
   notes: ""
-  fp7pattern: "= - = / = - = / = - = / ="
+  pattern: "= - = / = - = / = - = / ="
   regex_pattern: "=-==-==-==(_)?"
   genre: ghazal
 -
   id: "14"
   name: ;xafiif musaddas ma;xbuun ma;h;zuuf maq:tuu((
   notes: "May be used with #15. *The first syllable is properly long, but may be replaced with a short."
-  fp7pattern: "=* - = = / - = - = / = ="
+  pattern: "=* - = = / - = - = / = ="
   regex_pattern: "(=|-)-==-=-===(_)?"
   fp7tag: "G8"
   genre: ghazal
@@ -116,7 +116,7 @@
   id: "15"
   name: ;xafiif musaddas ma;xbuun ma;h;zuuf
   notes: "May be used with #14. *The first syllable is properly long, but may be replaced with a short."
-  fp7pattern: "=* - = = / - = - = / - - ="
+  pattern: "=* - = = / - = - = / - - ="
   regex_pattern: "(=|-)-==-=-=--=(_)?"
   fp7tag: "G8"
   genre: ghazal
@@ -124,7 +124,7 @@
   id: "16"
   name: ramal musaddas ma;xbuun ma;h;zuuf maq:tuu((
   notes: "May be used with #17. *The first syllable is properly long, but may be replaced with a short."
-  fp7pattern: "=* - = = / - - = = / = ="
+  pattern: "=* - = = / - - = = / = ="
   regex_pattern: "(=|-)-==--====(_)?"
   fp7tag: "G11"
   genre: ghazal
@@ -132,7 +132,7 @@
   id: "17"
   name: ramal musaddas ma;xbuun ma;h;zuuf
   notes: "May be used with #16. *The first syllable is properly long, but may be replaced with a short."
-  fp7pattern: "=* - = = / - - = = / - - ="
+  pattern: "=* - = = / - - = = / - - ="
   regex_pattern: "(=|-)-==--==--=(_)?"
   fp7tag: "G11"
   genre: ghazal
@@ -140,21 +140,21 @@
   id: "18"
   name: ramal mu;samman ma;xbuun ma;h;zuuf maq:tuu((
   notes: "May be used with #19. *The first syllable is properly long, but may be replaced with a short."
-  fp7pattern: "=* - = = / - - = = / - - = = / = ="
+  pattern: "=* - = = / - - = = / - - = = / = ="
   regex_pattern: "(=|-)-==--==--====(_)?"
   genre: ghazal
 -
   id: "19"
   name: ramal mu;samman ma;xbuun ma;h;zuuf
   notes: "May be used with #18. *The first syllable is properly long, but may be replaced with a short."
-  fp7pattern: "=* - = = / - - = = / - - = = / - - ="
+  pattern: "=* - = = / - - = = / - - = = / - - ="
   regex_pattern: "(=|-)-==--==--==--=(_)?"
   genre: ghazal
 -
   id: "20"
   name: hazaj mu;samman ashtar
   notes: "Has caesura."
-  fp7pattern: "= - = / - = = = // = - = / - = = ="
+  pattern: "= - = / - = = = // = - = / - = = ="
   regex_pattern: "=-=-===(_)?=-=-===(_)?"
   fp7tag: "G4"
   genre: ghazal
@@ -162,14 +162,14 @@
   id: "21"
   name: hazaj mu;samman ashtar maqbuu.z
   notes: "Has caesura."
-  fp7pattern: "= - = / - = - = // = - = / - = - ="
+  pattern: "= - = / - = - = // = - = / - = - ="
   regex_pattern: "=-=-=-=(_)?=-=-=-=(_)?"
   genre: ghazal
 -
   id: "22"
   name: munsari;h mu;samman ma:tvii maksuuf
   notes: "Has caesura."
-  fp7pattern: "= - - = / = - = // = - - = / = - ="
+  pattern: "= - - = / = - = // = - - = / = - ="
   regex_pattern: "=--==-=(_)?=--==-=(_)?"
   fp7tag: "G17"
   genre: ghazal
@@ -177,21 +177,21 @@
   id: "23"
   name: munsari;h mu;samman ma:tvii man;huur
   notes: ""
-  fp7pattern: "= - - = / = - = - / = - - = / ="
+  pattern: "= - - = / = - = - / = - - = / ="
   regex_pattern: "=--==-=-=--==(_)?"
   genre: ghazal
 -
   id: "24"
   name: sarii(( musaddas ma:tvii maksuuf
   notes: ""
-  fp7pattern: "= - - = / = - - = / = - ="
+  pattern: "= - - = / = - - = / = - ="
   regex_pattern: "=--==--==-=(_)?"
   genre: ghazal
 -
   id: "25"
   name: rajaz mu;samman ma:tvii ma;xbuun
   notes: "Has caesura."
-  fp7pattern: "= - - = / - = - = // = - - = / - = - ="
+  pattern: "= - - = / - = - = // = - - = / - = - ="
   regex_pattern: "=--=-=-=(_)?=--=-=-=(_)?"
   fp7tag: "G15"
   genre: ghazal
@@ -199,7 +199,7 @@
   id: "26"
   name: hazaj mu;samman saalim
   notes: "Not allowed to have extra unscanned short syllable at the end"
-  fp7pattern: "- = = = / - = = = / - = = = / - = = ="
+  pattern: "- = = = / - = = = / - = = = / - = = ="
   regex_pattern: "-===-===-===-==="
   fp7tag: "G2"
   genre: ghazal
@@ -207,14 +207,14 @@
   id: "27"
   name: hazaj musaddas ma;h;zuuf
   notes: ""
-  fp7pattern: "- = = = / - = = = / - = ="
+  pattern: "- = = = / - = = = / - = ="
   regex_pattern: "-===-===-==(_)?"
   genre: ghazal
 -
   id: "28"
   name: mutaqaarib mu;samman saalim
   notes: ""
-  fp7pattern: "- = = / - = = / - = = / - = ="
+  pattern: "- = = / - = = / - = = / - = ="
   regex_pattern: "-==-==-==-==(_)?"
   fp7tag: "MM28"
   genre: ghazal
@@ -222,7 +222,7 @@
   id: "29"
   name: mutaqaarib mu;samman ma;h;zuuf
   notes: ""
-  fp7pattern: "- = = / - = = / - = = / - ="
+  pattern: "- = = / - = = / - = = / - ="
   regex_pattern: "-==-==-==-=(_)?"
   fp7tag: "G12"
   genre: ghazal
@@ -230,7 +230,7 @@
   id: "30"
   name: mutaqaarib mu;samman mu.zaa((af maqbuu.z a;slam
   notes: ""
-  fp7pattern: "- = - / = = / - = - / = = / - = - / = = / - = - / = ="
+  pattern: "- = - / = = / - = - / = = / - = - / = = / - = - / = ="
   regex_pattern: "-=-==-=-==-=-==-=-==(_)?"
   fp7tag: "MM30"
   genre: ghazal
@@ -238,21 +238,21 @@
   id: "31"
   name: mutaqaarib musaddas mu.zaa((af maqbuu.z a;slam
   notes: ""
-  fp7pattern: "- = - / = = / - = - / = = / - = - / = ="
+  pattern: "- = - / = = / - = - / = = / - = - / = ="
   regex_pattern: "-=-==-=-==-=-==(_)?"
   genre: ghazal
 -
   id: "32"
   name: hazaj mu;samman mazbuu.z
   notes: ""
-  fp7pattern: "- = - = / - = - = / - = - = / - = - ="
+  pattern: "- = - = / - = - = / - = - = / - = - ="
   regex_pattern: "-=-=-=-=-=-=-=-=(_)?"
   genre: ghazal
 -
   id: "33"
   name: mujta;s mu;samman ma;xbuun ma;h;zuuf maq:tuu((
   notes: "May be used with #34."
-  fp7pattern: "- = - = / - - = = / - = - = / = ="
+  pattern: "- = - = / - - = = / - = - = / = ="
   regex_pattern: "-=-=--==-=-===(_)?"
   fp7tag: "G9"
   genre: ghazal
@@ -260,7 +260,7 @@
   id: "34"
   name: mujta;s mu;samman ma;xbuun ma;h;zuuf
   notes: "May be used with #33."
-  fp7pattern: "- = - = / - - = = / - = - = / - - ="
+  pattern: "- = - = / - - = = / - = - = / - - ="
   regex_pattern: "-=-=--==-=-=--=(_)?"
   fp7tag: "G9"
   genre: ghazal
@@ -268,7 +268,7 @@
   id: "35"
   name: mujta;s mu;samman ma;xbuun
   notes: "Does not have caesura."
-  fp7pattern: "- = - = / - - = = / - = - = / - - = ="
+  pattern: "- = - = / - - = = / - = - = / - - = ="
   regex_pattern: "-=-=--==-=-=--==(_)?"
   fp7tag: "G16"
   genre: ghazal
@@ -276,7 +276,7 @@
   id: "36"
   name: ramal mu;samman mashkuul
   notes: "Has caesura."
-  fp7pattern: "- - = - / = - = = // - - = - / = - = ="
+  pattern: "- - = - / = - = = // - - = - / = - = ="
   regex_pattern: "--=-=-==(_)?--=-=-==(_)?"
   fp7tag: "G6"
   genre: ghazal
@@ -284,6 +284,12 @@
   id: "37"
   name: kaamil mu;samman saalim
   notes: ""
-  fp7pattern: "- - = - = / - - = - = / - - = - = / - - = - ="
+  pattern: "- - = - = / - - = - = / - - = - = / - - = - ="
   regex_pattern: "--=-=--=-=--=-=--=-=(_)?"
   genre: ghazal
+-
+  id: "38"
+  name: hazaj mu;samman ma;h;zuuf
+  notes: "not in Pritchett but common now"
+  pattern: "- = = = / - = = = / - = = = / - = ="
+  regex_pattern: "-===-===-===-==(_)?"

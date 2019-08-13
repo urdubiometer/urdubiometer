@@ -25,7 +25,7 @@ import pickle
 
 def test_default_scanner():
 
-    z = urdubiometer.DefaultScanner(
+    z = urdubiometer.GhazalScanner(
         meters_filter=lambda x: [_ for _ in x if _['id'] == "1"]
     )
     assert len(z.meters_list) == 1
@@ -56,7 +56,7 @@ def test_command_line_interface(tmpdir):
     assert meters_list_result.exit_code == 0
     assert "hazaj musaddas a;xram ashtar" in meters_list_result.output
     # test meters_of with load_scanner
-    _scanner = urdubiometer.DefaultScanner()
+    _scanner = urdubiometer.GhazalScanner()
     # import pdb; pdb.set_trace()
     # _tmp_file is a py._path.local.LocalPath
     _tmp_file = tmpdir.mkdir('test_cli').join('scanner.pickle')
