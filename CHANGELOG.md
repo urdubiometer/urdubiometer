@@ -32,7 +32,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - add feet to mir meters
 
 ## 0.2.8 - 2019-08-13
-/mir_meters.yml
 - renamed DefaultScanner to GhazalScanner
 - added basic Mir meters in settings/mir_meters.yml
 - changed show_feet for missing Mir feet
