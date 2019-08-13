@@ -12,10 +12,6 @@ Base class for metrical scanner.
      and "_" for an optional, uncounted short followed by a wordbreak), or
     accepting ("Accepting").
 
-    See also
-    --------
-    urdubiometer.GraphParser
-
 """
 # add specific examples
 import itertools
@@ -36,11 +32,11 @@ class Scanner:
 
     Parameters
     ----------
-    transcription_parser : urdubiometer.GraphParser
+    transcription_parser : graphtransliterator.GraphTransliterator
         Transcription parser.
-    long_parser : urdubiometer.GraphParser
+    long_parser : graphtransliterator.GraphTransliterator
         Long metrical unit parser.
-    short_parser : urdubiometer.GraphParser
+    short_parser : graphtransliterator.GraphTransliterator
         Short metrical unit parser.
     constraints : dict(str, dict(str, dict(str,list[str])))
         Nested dict of constraints, organized by previous node, next node,
@@ -52,9 +48,6 @@ class Scanner:
         Method to add metrical feet to a scan
     post_scan_filter : function
         Filter to be applied after scan, used to narrow results.
-
-    Notes
-    -----
 
     """
 
@@ -97,6 +90,7 @@ class Scanner:
         ----------
         input: str
             Input string
+
         Returns
         -------
             str
@@ -119,6 +113,7 @@ class Scanner:
             Return the graph details (list of :class:`NodeMatch`)
         show_feet: bool
             Show metrical feet in scan. Default is `False`.
+
         Returns
         -------
         list or None

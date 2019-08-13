@@ -19,8 +19,8 @@ NodeMatch = namedtuple(
         "orig_tokens",  # original tokens that were matched
         "rule_found",  # name of rule found (production of parser)
         "token_i",  # used for matches at nodes in graph
-        "parent_key",
-    ],  # key of parent node in graph
+        "parent_key",  # key of parent node in graph
+    ],
 )
 
 
@@ -57,12 +57,10 @@ class ScanResult(namedtuple("ScanResult", ["scan", "matches", "meter_key"])):
     scan: str
         String representation of the meter found, e.g. =-===-===-=
     matches: list of NodeMatch (or UnitMatch)
-        List of individual metrical units found, either as NodeMatch or
+        List of individual metrical units found, either as UnitMatch or
         the more detailed NodeMatch
     meter_key: int
         Key to the meter identified
-
-    # TODO: Check if meter_key is in fact an int
     """
 
     __slots__ = ()

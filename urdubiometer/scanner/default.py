@@ -124,6 +124,6 @@ class DefaultScanner(Scanner):
             GraphTransliterator.from_yaml_file(short_parser_filename),
             _load_yaml(constraints_filename),
             meters_list,
-            find_feet=find_feet,  # self.find_feet,
+            find_feet=find_feet,
             post_scan_filter=filter_scans,
         )

@@ -79,6 +79,7 @@ rules:
   chh: c
   d: c
   dh: c
+  ;e: s   # this could be  separate symbol
   e: v
   e (;n g e <wb>): v_fut
   e (;n g ii <wb>): v_fut
@@ -104,6 +105,7 @@ rules:
   m: c
   n: c
   o: v
+  ;o: s # could add new symbol here (c.f. ;e)
   o (g ii <wb>): v_fut
   o (g e <wb>): v_fut
   p: c
@@ -175,6 +177,7 @@ tokens:
   g: [consonant]
   gh: [consonant]
   h: [consonant, consonant_h]
+  ;e: [short_vowel, short_long_vowel]
   i: [short_vowel]
   ii: [vowel]
   j: [consonant]
@@ -184,6 +187,7 @@ tokens:
   l: [consonant]
   m: [consonant]
   n: [consonant]
+  ;o: [short_vowel, short_long_vowel]
   o: [vowel]
   p: [consonant]
   ph: [consonant]

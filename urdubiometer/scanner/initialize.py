@@ -6,12 +6,6 @@ from copy import deepcopy
 from graphtransliterator import DirectedGraph
 import re
 
-#
-# -
-#     -
-#         token_prev:
-#             token_curr:
-
 
 def _constrained_parsers_of(constraints, long_parser, short_parser):
     """
@@ -44,7 +38,7 @@ def _constrained_parsers_of(constraints, long_parser, short_parser):
         return None
 
     def _expand_settings():
-        constrained_parsers = {}  # deepcopy(constraints)
+        constrained_parsers = {}
         for prev_unit, next_units in constraints.items():
             constrained_parsers[prev_unit] = {}
             for next_unit, prev_token_patterns in next_units.items():
@@ -82,6 +76,7 @@ def _constrained_parsers_of(constraints, long_parser, short_parser):
     return constrained_parsers
 
 
+# OLD CODE BELOW
 # def _constrained_parsers_of(constraints, long_parser, short_parser):
 #     """
 #     Create a dict of parsers based on constraints.
@@ -131,7 +126,6 @@ def _meters_graph_of(meters_list):
     meters_list = deepcopy(meters_list)  # necessary for update
     meters_graph = DirectedGraph()
 
-    # validate_meters_list(meters_list) already called in init so cut
     for i, meter in enumerate(meters_list):
         regex = meter["regex_pattern"]
         subgraph = _minimized_graph_of_meter(regex)
