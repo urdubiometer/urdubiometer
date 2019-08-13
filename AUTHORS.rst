@@ -4,7 +4,9 @@ Credits
 Development Lead
 ----------------
 
--   A.  Sean Pue <<a@seanpue.com>>
+-  
+
+   A. Sean Pue <a@seanpue.com>
 
 Contributors
 ------------
