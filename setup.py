@@ -3,7 +3,7 @@
 
 """The setup script."""
 
-from setuptools import setup, find_packages
+from setuptools import setup, find_namespace_packages
 
 import os.path
 
@@ -47,11 +47,10 @@ setup(
     install_requires=requirements,
     license="BSD license",
     long_description=readme + "\n\n" + history,
-    # long_description_content_type="text/markdown",
     include_package_data=True,
     keywords="urdubiometer",
     name="urdubiometer",
-    packages=find_packages(include=["urdubiometer"]),
+    packages=find_namespace_packages(include=['urdubiometer.*']),#find_packages(include),
     setup_requires=setup_requirements,
     test_suite="tests",
     tests_require=test_requirements,

@@ -33,18 +33,18 @@ adheres to `Semantic Versioning <http://semver.org/spec/v2.0.0.html>`__.
 *  add documentation
 *  fix contributors
 *  add requirements.txt
-*  fix project description (markdown import) on pypi
 *  fix code documentation and proofread
 *  add black to contributing
 *  raise warning/error in constraints if nothing matched or multiple
    matches
 *  add feet to mir meters
 
-X.X.X - XXXX-XX-XX
+0.2.9 - 2019-08-14
 ------------------
 
 * removed  Markdown due to pypi errors, converted to RST
 * fixes to CHANGELOG.rst due to bad conversion
+* Adjusted setup.py to use find_namespace_packages 
 
 0.2.8 - 2019-08-13
 ------------------
